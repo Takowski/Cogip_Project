@@ -1,13 +1,17 @@
 import { useState } from 'react'
+import AllInvoices from './All_invoices'
+import AllContacts from './All_contacts'
+import CompaniesList from './All_companies'
+import '../src/App.css'
 
 
 function App() {
   return (
     <>
       <div>
-        <h1 className="text-3xl text-red-600 font-bold underline">
-          Hello world!
-        </h1>
+        <AllInvoices />
+        <AllContacts />
+        <CompaniesList/>
       </div>
     </>
   )
