@@ -1,5 +1,6 @@
 import React from 'react';
 import allCompaniesData from './all_companies.json';
+import './App.css';
 
 const CompaniesList = () => {
   const sortedContacts = [...allCompaniesData].sort((a, b) => a.name.localeCompare(b.name));
@@ -7,7 +8,7 @@ const CompaniesList = () => {
   return (
     <div>
       <h2>All Companies</h2>
-      <table className="w-full text-sm text-left rtl:text-right text-neutral-950 dark:text-gray-400">
+      <table className="text-sm text-left rtl:text-right text-neutral-950 dark:text-gray-400">
         <thead className='text-xs text-neutral-950 uppercase bg-yellow-300 dark:bg-gray-700 dark:text-gray-400'>
           <tr>
             <th>Name</th> {/* ! changer pour <Link to={`/page/${company.name}`}>{company.name}</Link> car le nom de la compagnie doit etre un lien qui dirige vers une autre page */}

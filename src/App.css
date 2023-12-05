@@ -1,4 +1,5 @@
-
+@import '../assets/css/Allinvoices.min.css';
+@import '../assets/css/Allcontacts.min.css';
 *{
     justify-content: center;
     margin: 0;

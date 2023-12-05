@@ -1,36 +1,51 @@
 import React from 'react';
 import invoicesData from './all_invoices.json';
+import './App.css';
 
 const AllInvoices = () => {
-  // Assumons que toutes les factures ont les mêmes clés
-  const columns = Object.keys(invoicesData[0]);
+  const columns = [
+    {name: 'Invoice Number', selector: 'invoice_number', sortable: true, },
+    {name: 'Due Date', selector: 'due_dates', sortable: true, },
+    {name: 'Company', selector: 'company', sortable: true, },
+    {name: 'Created at', selector: 'created_at', sortable: true, },
+  ];
 
-  // Trier les factures par due_dates
-  const sortedInvoices = [...invoicesData].sort((a, b) => new Date(b.due_dates) - new Date(a.due_dates));
+  const sortedInvoices = [...invoicesData].sort((a, b) => new Date(b.due_dates) - new Date(a.due_dates)); // on trie les invoices par date de due date
+
+  const data = sortedInvoices.map((invoice) => {
+    return columns.reduce((acc, column) => {
+      acc[column.selector] = invoice[column.selector];
+      return acc;
+    }, {});
+  });
 
   return (
     <>
-     <h2>All Invoices</h2>
-    <table className="w-full text-sm text-left rtl:text-right text-neutral-950 dark:text-gray-400">
-      <thead className='text-xs text-neutral-950 uppercase bg-yellow-300 dark:bg-gray-700 dark:text-gray-400'>
-        <tr>
-          {columns.map((column, index) => (
-            <th key={index}>{column}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {sortedInvoices.map((invoice, index) => (
-          <tr className='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700' key={index}>
+      <h2 className="text-4xl font-extrabold dark:text-white">All Invoices</h2>
+      <div className='yellowSubtitle'></div>
+      <input className='searchBarCompany' type="text" placeholder='Search company' />
+      <div className='table-container'>
+      <table>
+        <thead>
+          <tr>
             {columns.map((column, index) => (
-              <td key={index}>{invoice[column]}</td>
+              <th key={index}>{column.name}</th>
             ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {sortedInvoices.map((invoice, index) => (
+            <tr key={index}>
+              {columns.map((column, index) => (
+                <td key={index}>{invoice[column.selector]}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      </div>
+      
     </>
-   
   );
 };
 
