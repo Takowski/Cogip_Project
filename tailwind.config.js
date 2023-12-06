@@ -7,7 +7,11 @@ export default {
       fontSize: {
         '2xs': '.55rem',
     },
-  },
+  
+      spacing: {
+        '62': '15.75rem',
+      },
+    },
 },
   plugins: [],
 }
