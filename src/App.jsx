@@ -1,7 +1,7 @@
 import { useState } from 'react'
-// import AllInvoices from './All_invoices'
-// import AllContacts from './All_contacts'
-// import CompaniesList from './All_companies'
+import AllInvoices from './All_invoices'
+import AllContacts from './All_contacts'
+import CompaniesList from './All_companies'
 import Footer from '../footer'
 import '../src/App.css'
 
@@ -10,9 +10,9 @@ function App() {
   return (
     <>
       <div>
-        {/* <AllInvoices />
+        <AllInvoices />
         <AllContacts />
-        <CompaniesList/> */}
+        <CompaniesList/>
         <Footer />
       </div>
     </>
