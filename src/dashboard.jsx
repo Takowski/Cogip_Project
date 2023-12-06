@@ -2,7 +2,7 @@ import React from 'react';
 
 const Dashboard = () => {
   return (
-    <div className="flex h-screen bg-mercury-50">
+    <div className="flex h-screen bg-white-lilac-50 max-w-5xl">
       <div className="p-6 w-1/5 bg-white flex flex-col"> {/*partie de gauche}
 
         {/* partie du haut */}
