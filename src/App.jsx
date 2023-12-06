@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Header_Cogip from './Header'
 import AllInvoices from './All_invoices'
 import AllContacts from './All_contacts'
 import CompaniesList from './All_companies'
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
       <div>
+        <Header_Cogip />
         <AllInvoices />
         <AllContacts />
         <CompaniesList/>
