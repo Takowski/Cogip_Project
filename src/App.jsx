@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       <div>
-        <Home />
         <Header_Cogip />
+        <Home />
         <AllInvoices />
         <AllContacts />
         <CompaniesList/>
