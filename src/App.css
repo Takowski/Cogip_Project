@@ -1,0 +1,12 @@
+.yellow-bg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 36px;
+    width: 40%;
+    height:18px;
+    background-color: rgb(253 224 71);
+    z-index: -1;
+
+  }

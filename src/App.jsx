@@ -1,13 +1,13 @@
 import { useState } from 'react'
+import './App.css'
+import Show_Contact from './Show_Contact'
 
 
 function App() {
   return (
     <>
       <div>
-        <h1 className="text-3xl text-red-600 font-bold underline">
-          Hello world!
-        </h1>
+       <Show_Contact />
       </div>
     </>
   )
