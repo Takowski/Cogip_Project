@@ -2,6 +2,15 @@ import React from 'react';
 import companies from './all_companies.json'; // Import the data
 import DataTable from 'react-data-table-component';
 
+const ExpandedComponent = ({ data }) =>
+  <div className='container flex flex-col p-3 gap-y-1'>
+    <span>Name: {data.name}</span>
+    <span>TVA Numer: {data.TVA}</span>
+    <span>Country: {data.country}</span>
+    <span>Type: {data.type}</span>
+    <span>Created at: {data.created_at}</span>
+  </div>;
+
 const columns = [
   {
     name: 'Name',
@@ -37,16 +46,14 @@ const columns = [
   },
 ];
 
-const handleSort = (column, sortDirection) => console.log(column.selector, sortDirection);
-
 function MyComponent() {
   return (
     <DataTable
       title="Companies"
       columns={columns}
       data={companies} // Use the imported data
-      onSort={handleSort}
-    
+      expandableRows
+      expandableRowsComponent={ExpandedComponent}
     />
   );
 }
