@@ -1,6 +1,9 @@
-import React from 'react';
+
 import companies from './all_companies.json'; // Import the data
 import DataTable from 'react-data-table-component';
+import React, { useState, useEffect } from 'react';
+
+
 
 const ExpandedComponent = ({ data }) =>
   <div className='container flex flex-col p-3 gap-y-1'>
@@ -47,13 +50,25 @@ const columns = [
 ];
 
 function MyComponent() {
+  const indexedCompanies = companies.map((company, index) => ({
+    ...company,
+    index,
+  }));
   return (
     <DataTable
       title="Companies"
       columns={columns}
-      data={companies} // Use the imported data
+      data={indexedCompanies} // Use the imported data
       expandableRows
       expandableRowsComponent={ExpandedComponent}
+      conditionalRowStyles={[
+        {
+          when: () => true, // Apply this style to all rows
+          style: (row) => ({
+            backgroundColor: row.index % 2 === 0 ? 'white' : '#F5F5F5',
+          }),
+        },
+      ]}
     />
   );
 }
