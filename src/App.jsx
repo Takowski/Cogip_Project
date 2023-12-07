@@ -4,7 +4,7 @@ import AllInvoices from './All_invoices'
 import AllContacts from './All_contacts'
 import CompaniesList from './All_companies'
 import Footer from '../footer'
-import Home from './landing'
+import TableHome from './landing'
 import '../src/App.css'
 
 
@@ -13,7 +13,7 @@ function App() {
     <>
       <div>
         <Header_Cogip />
-        <Home />
+        <TableHome />
         <AllInvoices />
         <AllContacts />
         <CompaniesList/>
