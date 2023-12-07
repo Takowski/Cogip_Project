@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@inovua/reactdatagrid-community": "^5.10.2",
     "datatables.net": "^1.13.8",
     "datatables.net-responsive": "^2.5.0",
     "react": "^18.2.0",
