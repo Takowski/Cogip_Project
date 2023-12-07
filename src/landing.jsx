@@ -8,12 +8,12 @@ const Home = () => {
     selector: key,
     sortable: true,
   }));
-
+const lastFiveCompanies = companies.slice(-5);
   return (
     <DataTable
       title="Companies"
       columns={columns}
-      data={companies}
+      data={lastFiveCompanies}
     />
   );
 };
