@@ -1,7 +1,7 @@
 
 import companies from './all_companies.json'; // Import the data
 import DataTable from 'react-data-table-component';
-
+import './landing.css';
 
 
 const ExpandedComponent = ({ data }) =>
@@ -71,6 +71,7 @@ function MyComponent() {
       expandableRows
       expandableRowsComponent={ExpandedComponent}
       conditionalRowStyles={conditionalRowStyles}
+      
     />
   );
 }

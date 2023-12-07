@@ -1,0 +1,45 @@
+
+.rdt_Table {
+  max-width: 800px !important;/* styles for the table */
+}
+
+.rdt_TableRow {
+  /* styles for the rows */
+}
+
+.rdt_TableCol {
+  /* styles for the columns */
+}
+
+.rdt_TableCol_Sortable {    
+  /* styles for sortable columns */
+}
+
+.rdt_TableCell {
+  /* styles for the cells */
+}
+
+.rdt_TableHeader {
+/* styles for the header */
+}
+
+.rdt_TableFooter {
+  /* styles for the footer */
+}
+
+.rdt_TableHead {   
+  /* styles for the table head */
+}
+
+.rdt_TableHeadRow {
+    background-color: yellow !important;
+  /* styles for the header row */
+}
+
+.rdt_TableBody {
+  /* styles for the table body */
+}
+
+.rdt_ExpanderRow {
+  /* styles for the expanded row */
+}
