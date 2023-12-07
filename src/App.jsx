@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import Dashboard from './dashboard'
+import DashboardV2 from './dashboardV2'
+
 
 function App() {
   return (
     <>
-      <Dashboard />
+      <DashboardV2/>
     </>
   )
 }
+
 export default App

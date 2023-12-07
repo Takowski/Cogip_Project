@@ -2,7 +2,7 @@ import React from 'react';
 
 const Dashboard = () => {
   return (
-    <div className="flex h-screen bg-white-lilac-50 max-w-5xl">
+    <div className="flex h-screen bg-white-lilac-50 max-w-1044">
       <div className="p-6 w-1/5 bg-white flex flex-col"> {/*partie de gauche}
 
         {/* partie du haut */}
@@ -40,13 +40,16 @@ const Dashboard = () => {
 </div>
 
       {/* Deuxième ligne avec deux divs */}
-      <div className='flex items-center justify-center'>
+      <div className='bg-white'>
         <p>Statistics</p>
-        <div style={{ backgroundColor: '#4D4CAC' }} className='h-18 w-18 rounded-full mr-4'></div>
-        <div style={{ backgroundColor: '#9698D6' }} className='h-18 w-18 rounded-full mr-4'></div>
-        <div style={{ backgroundColor: '#FF808B' }} className='h-18 w-18 rounded-full mr-4'></div>
+        <div className='flex items-center justify-center'>
+          <div style={{ backgroundColor: '#4D4CAC' }} className='h-70 w-70 rounded-full mr-4'></div>
+          <div style={{ backgroundColor: '#9698D6' }} className='h-70 w-70 rounded-full mr-4'></div>
+          <div style={{ backgroundColor: '#FF808B' }} className='h-70 w-70 rounded-full mr-4'></div>
+        </div>
       </div>
-      <div className='bg-white w-507 h-403'>
+
+      <div  className='bg-white'>
         <p>Last Invoices</p>
         <hr />
         <table className="table-auto m-0"> {/*tableau à remplir avec les données de l'API*/}
@@ -83,7 +86,7 @@ const Dashboard = () => {
       </div>
 
       {/* Troisième ligne avec deux divs */}
-      <div className='bg-white w-507 h-403'>
+      <div  className='bg-white'>
         <p>Last Contacts</p>
         <hr />
         <table className="table-auto m-0"> {/*tableau à remplir avec les données de l'API*/}
@@ -117,8 +120,8 @@ const Dashboard = () => {
                 </tr>
             </tbody>
         </table>
-      </div>
-      <div className='bg-white w-507 h-403'>
+      </div> 
+      <div className='bg-white'>
         <p>Last Companies</p>
         <hr />
         <table className="table-auto m-0"> {/*tableau à remplir avec les données de l'API*/}
