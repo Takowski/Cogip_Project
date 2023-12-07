@@ -1,7 +1,6 @@
 
 import companies from './all_companies.json'; // Import the data
 import DataTable from 'react-data-table-component';
-import React, { useState, useEffect } from 'react';
 
 
 
@@ -49,26 +48,29 @@ const columns = [
   },
 ];
 
+const conditionalRowStyles = [
+  {
+    when: () => true, 
+    style: (row) => ({
+      backgroundColor: row.index % 2 === 0 ? 'white' : '#F5F5F5',
+    }),
+  },
+];
+
 function MyComponent() {
   const indexedCompanies = companies.map((company, index) => ({
     ...company,
     index,
   }));
+
   return (
     <DataTable
       title="Companies"
       columns={columns}
-      data={indexedCompanies} // Use the imported data
+      data={indexedCompanies} // Use the indexed data
       expandableRows
       expandableRowsComponent={ExpandedComponent}
-      conditionalRowStyles={[
-        {
-          when: () => true, // Apply this style to all rows
-          style: (row) => ({
-            backgroundColor: row.index % 2 === 0 ? 'white' : '#F5F5F5',
-          }),
-        },
-      ]}
+      conditionalRowStyles={conditionalRowStyles}
     />
   );
 }
