@@ -60,6 +60,9 @@ export default {
         '70': '70px',
 
       },
+      top:{
+        '450': '450px',
+      },
     },
   },
   plugins: [],
