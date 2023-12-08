@@ -1,0 +1,63 @@
+.rdt_Table {
+  max-width: 800px !important; /* styles for the table */
+}
+
+.rdt_TableRow:nth-child(odd) {
+  background-color: #F5F5F5 !important;
+}
+
+.rdt_TableRow:nth-child(even) {
+  background-color: white !important;
+}
+
+.rdt_TableCol {
+  font-size: 0.9rem !important;
+  font-weight: bold !important;
+ 
+}
+
+.rdt_TableCol_Sortable {
+  /* styles for sortable columns */
+}
+
+.rdt_TableCell {
+  font-size: 0.9rem;/* styles for the cells */
+}
+
+.rdt_TableHeader {
+font-size: 2.5rem !important;
+}
+
+.rdt_TableFooter {
+  /* styles for the footer */
+}
+
+.rdt_TableHead {
+
+}
+
+.rdt_TableHeadRow {
+  background-color: #F9DE4E !important;
+  /* styles for the header row */
+}
+
+.rdt_TableBody {
+  
+  /* styles for the table body */
+}
+
+.rdt_ExpanderRow {
+
+  /* styles for the expanded row */
+}/*# sourceMappingURL=landing.css.map */
+
+@media (max-width: 700px) {
+  .rdt_TableHeader {
+    font-size: 2rem !important;
+  }
+}
+@media (max-width: 400px) {
+  .rdt_TableHeader {
+    font-size: 1.5rem !important;
+  }
+}

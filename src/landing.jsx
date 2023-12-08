@@ -1,7 +1,7 @@
 
 import companies from './all_companies.json'; // Import the data
 import DataTable from 'react-data-table-component';
-import './landing.css';
+import './yellow_table.css';
 
 
 const ExpandedComponent = ({ data }) =>
@@ -48,14 +48,6 @@ const columns = [
   },
 ];
 
-const conditionalRowStyles = [
-  {
-    when: () => true, 
-    style: (row) => ({
-      backgroundColor: row.index % 2 === 0 ? 'white' : '#F5F5F5',
-    }),
-  },
-];
 
 function MyComponent() {
   const indexedCompanies = companies.map((company, index) => ({
@@ -70,7 +62,7 @@ function MyComponent() {
       data={indexedCompanies} // Use the indexed data
       expandableRows
       expandableRowsComponent={ExpandedComponent}
-      conditionalRowStyles={conditionalRowStyles}
+      
       
     />
   );
