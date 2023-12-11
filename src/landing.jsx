@@ -1,8 +1,8 @@
-
+import React, { useState, useMemo } from 'react';
 import companies from './all_companies.json'; // Import the data
 import DataTable from 'react-data-table-component';
+import FilterComponent from './filter'; // Make sure to import or define FilterComponent
 import './yellow_table.css';
-
 
 const ExpandedComponent = ({ data }) =>
   <div className='container flex flex-col p-3 gap-y-1'>
@@ -25,6 +25,7 @@ const columns = [
     selector: row => row.TVA,
     sortable: true,
     hide: 'sm',
+    grow: 1,
   },
   {
     name: 'Country',
@@ -48,24 +49,43 @@ const columns = [
   },
 ];
 
-
 function MyComponent() {
+  const [filterText, setFilterText] = useState('');
+  const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
   const indexedCompanies = companies.map((company, index) => ({
     ...company,
     index,
   }));
 
+  const filteredItems = indexedCompanies.filter(
+    item => item.name && item.name.toLowerCase().includes(filterText.toLowerCase()),
+  );
+
+  const subHeaderComponentMemo = useMemo(() => {
+    const handleClear = () => {
+      if (filterText) {
+        setResetPaginationToggle(!resetPaginationToggle);
+        setFilterText('');
+      }
+    };
+
+    return (
+      <FilterComponent onFilter={e => setFilterText(e.target.value)} onClear={handleClear} filterText={filterText} />
+    );
+  }, [filterText, resetPaginationToggle]);
+
   return (
     <DataTable
-    title="Companies"
-    
-    striped={true}
+      title="Companies"
+      striped={true}
       columns={columns}
-      data={indexedCompanies} // Use the indexed data
+      data={filteredItems} // Use the filtered items
       expandableRows
       expandableRowsComponent={ExpandedComponent}
-      
-      
+      pagination
+      paginationResetDefaultPage={resetPaginationToggle} // optionally, a hook to reset pagination to page 1
+      subHeader
+      subHeaderComponent={subHeaderComponentMemo}
     />
   );
 }
