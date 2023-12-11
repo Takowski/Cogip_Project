@@ -19,3 +19,13 @@
     z-index: -1;
 
   }
+
+.companies5{
+    width: 100%px;
+    display: flex;
+   
+
+}  
+.card{
+  width:900px;  
+}

@@ -18,14 +18,14 @@ const columns = [
     name: 'Name',
     selector: row => row.name,
     sortable: true,
-    grow: 2,
+    grow: 3,
   },
   {
     name: 'TVA',
     selector: row => row.TVA,
     sortable: true,
     hide: 'sm',
-    grow: 1,
+    
   },
   {
     name: 'Country',
@@ -46,6 +46,7 @@ const columns = [
     sortable: true,
     right: false,
     hide: 'md',
+    
   },
 ];
 
@@ -86,6 +87,7 @@ function MyComponent() {
       paginationResetDefaultPage={resetPaginationToggle} // optionally, a hook to reset pagination to page 1
       subHeader
       subHeaderComponent={subHeaderComponentMemo}
+      
     />
   );
 }

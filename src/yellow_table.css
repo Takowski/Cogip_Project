@@ -1,5 +1,5 @@
 .rdt_Table {
-  /* max-width: 900px !important; styles for the table */
+  max-width: 900px !important; 
 }
 
 /* .rdt_TableRow:nth-child(odd) {

@@ -17,9 +17,10 @@ function App() {
       <div>
         <Header_Cogip />
         
-        
-        <div className='grid justify-items-center'>
+        <div className="companies5" >
+        <card className="card">
           <TableHome />
+        </card>
         </div>
         
         
