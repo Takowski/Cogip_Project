@@ -1,14 +1,14 @@
 .rdt_Table {
-  max-width: 800px !important; /* styles for the table */
+  /* max-width: 900px !important; styles for the table */
 }
 
-.rdt_TableRow:nth-child(odd) {
+/* .rdt_TableRow:nth-child(odd) {
   background-color: #F5F5F5 !important;
 }
 
 .rdt_TableRow:nth-child(even) {
   background-color: white !important;
-}
+} */
 
 .rdt_TableCol {
   font-size: 0.9rem !important;

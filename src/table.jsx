@@ -2,6 +2,7 @@
 import companies from './all_companies.json'; // Import the data
 import DataTable from 'react-data-table-component';
 import './yellow_table.css';
+import React, { useEffect, useState } from 'react';
 
 
 const ExpandedComponent = ({ data }) =>
@@ -30,38 +31,46 @@ const columns = [
     name: 'Country',
     selector: row => row.country,
     sortable: true,
-    right: false,
+    right: true,
   },
   {
     name: 'Type',
     selector: row => row.type,
     sortable: true,
-    right: false,
+    right: true,
     hide: 'md',
   },
   {
-    name: 'Created at',
+    name: 'Created At',
     selector: row => row.created_at,
     sortable: true,
-    right: false,
+    right: true,
     hide: 'md',
   },
 ];
 
 
-function MyComponent() {
-  const indexedCompanies = companies.map((company, index) => ({
-    ...company,
-    index,
-  }));
+function Table({limit}) {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch('https://api-cogip-329f9c72c66d.herokuapp.com/api/companies')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => setData(data.slice(0, limit)))
+      .catch(error => console.error('Error:', error));
+  }, [limit]);
+
+
 
   return (
     <DataTable
-    title="Companies"
-    
-    striped={true}
+      title="Companies"
       columns={columns}
-      data={indexedCompanies} // Use the indexed data
+      data={data} // Use the indexed data
       expandableRows
       expandableRowsComponent={ExpandedComponent}
       
@@ -70,4 +79,4 @@ function MyComponent() {
   );
 }
 
-export default MyComponent;
+export default Table;
