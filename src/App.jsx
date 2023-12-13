@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react'
 import Header_Cogip from './Header'
-// import AllInvoices from './All_invoices'
-// import AllContacts from './All_contacts'
-// import CompaniesList from './All_companies'
 import Footer from '../footer'
 import CompanieTable from './Companiesyellow'
 import '../src/App.css'
