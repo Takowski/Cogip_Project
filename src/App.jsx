@@ -20,13 +20,6 @@ function App() {
               fetchFive={true}
               pagination={false}
               showSubHeaderComponent={false}
-
-
-
-
-
-
-
             />
           </card>
         </div>
