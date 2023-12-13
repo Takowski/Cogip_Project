@@ -44,16 +44,22 @@ const columns = [
   },
 ];
 
-function CompanieTable() {
+function CompanieTable({fetchFive, pagination, showSubHeaderComponent}) {
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
   const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
-    fetch('https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies')
+    
+      const url = fetchFive
+        ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies'
+        : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/companies';
+
+
+    fetch(url)
       .then(response => response.json())
       .then(data => setCompanies(data.data));
-  }, []);
+  }, [fetchFive]);
 
   const indexedCompanies = companies.map((company, index) => ({
     ...company,
@@ -72,10 +78,10 @@ function CompanieTable() {
       }
     };
 
-    return (
+    return showSubHeaderComponent ? (
       <FilterComponent onFilter={e => setFilterText(e.target.value)} onClear={handleClear} filterText={filterText} />
-    );
-  }, [filterText, resetPaginationToggle]);
+    ) : null;
+  }, [filterText, resetPaginationToggle, showSubHeaderComponent]);
 
   return (
     <DataTable
@@ -85,10 +91,10 @@ function CompanieTable() {
       data={filteredItems}
       expandableRows
       expandableRowsComponent={ExpandedComponent}
-      // pagination
-      // paginationResetDefaultPage={resetPaginationToggle}
-      // subHeader
-      // subHeaderComponent={subHeaderComponentMemo}
+      pagination={pagination}
+      paginationResetDefaultPage={resetPaginationToggle}
+      subHeader
+      subHeaderComponent={subHeaderComponentMemo}
     />
   );
 }

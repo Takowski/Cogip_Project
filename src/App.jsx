@@ -19,7 +19,18 @@ function App() {
 
         <div className="companies5" >
           <card className="card">
-            <CompanieTable />
+            <CompanieTable 
+            fetchFive={true}
+            pagination={false}
+            showSubHeaderComponent={true}
+            
+
+
+            
+            
+            
+
+             />
           </card>
         </div>
 
