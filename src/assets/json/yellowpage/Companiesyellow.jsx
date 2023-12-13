@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import DataTable from 'react-data-table-component';
-import FilterComponent from './filter';
+import FilterComponent from '../../../filter';
 import './yellow_table.css';
 
 const ExpandedComponent = ({ data }) =>
@@ -44,16 +44,16 @@ const columns = [
   },
 ];
 
-function CompanieTable({fetchFive, pagination, showSubHeaderComponent}) {
+function CompanieTable({ fetchFive, pagination, showSubHeaderComponent }) {
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
   const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
-    
-      const url = fetchFive
-        ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies'
-        : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/companies';
+
+    const url = fetchFive
+      ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies'
+      : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/companies';
 
 
     fetch(url)

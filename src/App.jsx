@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Header_Cogip from './Header'
 import Footer from '../footer'
-import CompanieTable from './Companiesyellow'
+import CompanieTable from './assets/json/yellowpage/Companiesyellow'
 import '../src/App.css'
 
 
@@ -16,18 +16,18 @@ function App() {
 
         <div className="companies5" >
           <card className="card">
-            <CompanieTable 
-            fetchFive={true}
-            pagination={false}
-            showSubHeaderComponent={true}
-            
+            <CompanieTable
+              fetchFive={true}
+              pagination={false}
+              showSubHeaderComponent={false}
 
 
-            
-            
-            
 
-             />
+
+
+
+
+            />
           </card>
         </div>
 
