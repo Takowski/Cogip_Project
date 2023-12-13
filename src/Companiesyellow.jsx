@@ -1,65 +1,67 @@
-import React, { useState, useMemo } from 'react';
-import companies from './all_companies.json'; // Import the data
+import React, { useState, useEffect, useMemo } from 'react';
 import DataTable from 'react-data-table-component';
-import FilterComponent from './filter'; // Make sure to import or define FilterComponent
+import FilterComponent from './filter';
 import './yellow_table.css';
 
 const ExpandedComponent = ({ data }) =>
   <div className='container flex flex-col p-3 gap-y-1'>
-    <span>Name: {data.name}</span>
-    <span>TVA Numer: {data.TVA}</span>
+    <span>Company Name: {data.company_name}</span>
+    <span>TVA: {data.tva}</span>
     <span>Country: {data.country}</span>
-    <span>Type: {data.type}</span>
-    <span>Created at: {data.created_at}</span>
+    <span>Type Name: {data.type_name}</span>
+    <span>Company Creation: {data.company_creation}</span>
   </div>;
 
 const columns = [
   {
-    name: 'Name',
-    selector: row => row.name,
+    name: 'Company Name',
+    selector: row => row.company_name,
     sortable: true,
     grow: 3,
   },
   {
     name: 'TVA',
-    selector: row => row.TVA,
+    selector: row => row.tva,
     sortable: true,
     hide: 'sm',
-    
   },
   {
     name: 'Country',
     selector: row => row.country,
     sortable: true,
-    right: false,
   },
   {
-    name: 'Type',
-    selector: row => row.type,
+    name: 'Type Name',
+    selector: row => row.type_name,
     sortable: true,
-    right: false,
     hide: 'md',
   },
   {
-    name: 'Created at',
-    selector: row => row.created_at,
+    name: 'Created At',
+    selector: row => row.company_creation,
     sortable: true,
-    right: false,
     hide: 'md',
-    
   },
 ];
 
-function MyComponent() {
+function CompanieTable() {
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
+  const [companies, setCompanies] = useState([]);
+
+  useEffect(() => {
+    fetch('https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies')
+      .then(response => response.json())
+      .then(data => setCompanies(data.data));
+  }, []);
+
   const indexedCompanies = companies.map((company, index) => ({
     ...company,
     index,
   }));
 
   const filteredItems = indexedCompanies.filter(
-    item => item.name && item.name.toLowerCase().includes(filterText.toLowerCase()),
+    item => item.company_name && item.company_name.toLowerCase().includes(filterText.toLowerCase()),
   );
 
   const subHeaderComponentMemo = useMemo(() => {
@@ -80,16 +82,15 @@ function MyComponent() {
       title="Companies"
       striped={true}
       columns={columns}
-      data={filteredItems} // Use the filtered items
+      data={filteredItems}
       expandableRows
       expandableRowsComponent={ExpandedComponent}
-      pagination
-      paginationResetDefaultPage={resetPaginationToggle} // optionally, a hook to reset pagination to page 1
-      subHeader
-      subHeaderComponent={subHeaderComponentMemo}
-      
+      // pagination
+      // paginationResetDefaultPage={resetPaginationToggle}
+      // subHeader
+      // subHeaderComponent={subHeaderComponentMemo}
     />
   );
 }
 
-export default MyComponent;
+export default CompanieTable;
