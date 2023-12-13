@@ -14,7 +14,7 @@ const ExpandedComponent = ({ data }) =>
 
 const columns = [
   {
-    name: 'Company Name',
+    name: 'Name',
     selector: row => row.company_name,
     sortable: true,
     grow: 2,

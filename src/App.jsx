@@ -3,6 +3,7 @@ import Header_Cogip from './Header'
 import Footer from '../footer'
 import CompanieTable from './assets/json/yellowpage/Companiesyellow'
 import ContactsTable from './assets/json/yellowpage/Contactsyellow'
+import InvoicesTable from './assets/json/yellowpage/Invoicesyellow'
 import '../src/App.css'
 
 
@@ -27,7 +28,16 @@ function App() {
 
       <div>
         <Header_Cogip />
-
+        <div className="companies5" >
+          <card className="card">
+            <InvoicesTable
+              fetchFive={true}
+              pagination={false}
+              showSubHeaderComponent={false}
+              expandedRows={isExpanded}
+            />
+          </card>
+        </div>
         <div className="companies5" >
           <card className="card">
             <CompanieTable

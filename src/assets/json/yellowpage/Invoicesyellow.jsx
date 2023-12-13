@@ -5,69 +5,62 @@ import './yellow_table.css';
 
 const ExpandedComponent = ({ data }) =>
     <div className='container flex flex-col p-3 gap-y-1'>
-        <span>Name: {data.name}</span>
-        <span>Email: {data.email}</span>
-        <span>Phone: {data.phone}</span>
-        <span>Contact Creation: {data.contact_creation}</span>
+        <span>Reference: {data.ref}</span>
+        <span>Due Date: {data.date_due}</span>
+        <span>Invoice Creation: {data.invoice_creation}</span>
         <span>Company Name: {data.company_name}</span>
     </div>;
 
 const columns = [
     {
-        name: 'Name',
-        selector: row => row.name,
+        name: 'Number',
+        selector: row => row.ref,
         sortable: true,
-       
+        grow: 1,
     },
     {
-        name: 'Phone',
-        selector: row => row.phone,
+        name: 'Date Due',
+        selector: row => row.date_due,
         sortable: true,
         hide: 'md',
     },
     {
-        name: 'Email',
-        selector: row => row.email,
+        name: 'Created At',
+        selector: row => row.invoice_creation,
         sortable: true,
         hide: 'sm',
     },
     {
-        name: 'Company Name',
+        name: 'Company',
         selector: row => row.company_name,
         sortable: true,
-        
-    },
-    {
-        name: 'Created at',
-        selector: row => row.contact_creation,
-        sortable: true,
-        hide: 'md',
     },
 ];
 
-function ContactsTable({ fetchFive, pagination, showSubHeaderComponent, expandedRows }) {
+function InvoicesTable({ fetchFive, pagination, showSubHeaderComponent, expandedRows }) {
     const [filterText, setFilterText] = useState('');
     const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
-    const [contacts, setContacts] = useState([]);
+    const [invoices, setInvoices] = useState([]);
   
     useEffect(() => {
       const url = fetchFive
-        ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecontacts'
-        : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/contacts';
+        ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fiveinvoices'
+        : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/invoices';
+       
   
-      fetch(url)
+        fetch(url)
         .then(response => response.json())
-        .then(data => setContacts(data.data));
+        .then(data => setInvoices(data.data));
     }, [fetchFive]);
   
-    const indexedContacts = contacts.map((contact, index) => ({
-      ...contact,
+    const indexedInvoices = invoices.map((invoice, index) => ({
+      ...invoice,
       index,
     }));
   
-    const filteredItems = indexedContacts.filter(
-      item => item.name && item.name.toLowerCase().includes(filterText.toLowerCase()),
-    );
+    const filteredItems = indexedInvoices.filter(
+        item => item.ref && item.ref.toLowerCase().includes(filterText.toLowerCase()),
+      );
   
     const subHeaderComponentMemo = useMemo(() => {
       const handleClear = () => {
@@ -84,7 +77,7 @@ function ContactsTable({ fetchFive, pagination, showSubHeaderComponent, expanded
   
   return (
     <DataTable
-      title="Contacts"
+      title="Invoices"
       striped={true}
       columns={columns}
       data={filteredItems}
@@ -98,4 +91,4 @@ function ContactsTable({ fetchFive, pagination, showSubHeaderComponent, expanded
   );
 }
 
-export default ContactsTable;
+export default InvoicesTable;
