@@ -7,7 +7,20 @@ import '../src/App.css'
 
 
 function App() {
+  const [isExpanded, setIsExpanded] = useState(window.innerWidth > 959);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsExpanded(window.innerWidth < 959);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -21,6 +34,7 @@ function App() {
               fetchFive={true}
               pagination={false}
               showSubHeaderComponent={false}
+              expandedRows={isExpanded}
             />
           </card>
         </div>
@@ -30,6 +44,7 @@ function App() {
               fetchFive={true}
               pagination={false}
               showSubHeaderComponent={false}
+              expandedRows={isExpanded}
             />
           </card>
         </div>

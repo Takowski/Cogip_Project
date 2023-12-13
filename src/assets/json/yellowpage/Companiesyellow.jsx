@@ -17,7 +17,7 @@ const columns = [
     name: 'Company Name',
     selector: row => row.company_name,
     sortable: true,
-    grow: 3,
+    grow: 2,
   },
   {
     name: 'TVA',
@@ -44,7 +44,7 @@ const columns = [
   },
 ];
 
-function CompanieTable({ fetchFive, pagination, showSubHeaderComponent }) {
+function CompanieTable({ fetchFive, pagination, showSubHeaderComponent, expandedRows }) {
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
   const [companies, setCompanies] = useState([]);
@@ -89,7 +89,7 @@ function CompanieTable({ fetchFive, pagination, showSubHeaderComponent }) {
       striped={true}
       columns={columns}
       data={filteredItems}
-      expandableRows
+      expandableRows={expandedRows}
       expandableRowsComponent={ExpandedComponent}
       pagination={pagination}
       paginationResetDefaultPage={resetPaginationToggle}

@@ -17,7 +17,13 @@ const columns = [
         name: 'Name',
         selector: row => row.name,
         sortable: true,
-        grow: 3,
+        grow: 1,
+    },
+    {
+        name: 'Phone',
+        selector: row => row.phone,
+        sortable: true,
+        hide: 'md',
     },
     {
         name: 'Email',
@@ -26,25 +32,20 @@ const columns = [
         hide: 'sm',
     },
     {
-        name: 'Phone',
-        selector: row => row.phone,
-        sortable: true,
-    },
-    {
-        name: 'Contact Creation',
-        selector: row => row.contact_creation,
-        sortable: true,
-        hide: 'md',
-    },
-    {
         name: 'Company Name',
         selector: row => row.company_name,
+        sortable: true,
+        
+    },
+    {
+        name: 'Created at',
+        selector: row => row.contact_creation,
         sortable: true,
         hide: 'md',
     },
 ];
 
-function ContactsTable({ fetchFive, pagination, showSubHeaderComponent }) {
+function ContactsTable({ fetchFive, pagination, showSubHeaderComponent, expandedRows }) {
     const [filterText, setFilterText] = useState('');
     const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
     const [contacts, setContacts] = useState([]);
@@ -87,7 +88,7 @@ function ContactsTable({ fetchFive, pagination, showSubHeaderComponent }) {
       striped={true}
       columns={columns}
       data={filteredItems}
-      expandableRows
+      expandableRows={expandedRows}
       expandableRowsComponent={ExpandedComponent}
       pagination={pagination}
       paginationResetDefaultPage={resetPaginationToggle}
