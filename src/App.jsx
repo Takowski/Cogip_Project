@@ -91,6 +91,7 @@ function App() {
       } />
       
     </Routes>
+    <WorkBetter />
     <Footer />
   </Router>
 );
