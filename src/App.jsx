@@ -69,6 +69,7 @@ function App() {
          />
        </card>
      </div>
+     <WorkBetter />
      </>
       } />
       <Route path="/AllCompanies" element={
@@ -104,7 +105,7 @@ function App() {
       
       
     </Routes>
-    <WorkBetter />
+    
     <Footer />
   </Router>
 );
