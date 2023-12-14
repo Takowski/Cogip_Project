@@ -1,0 +1,162 @@
+[
+  {
+      "id": 1,
+      "name": "ABC Corporation",
+      "TVA": "123456789",
+      "country": "USA",
+      "type": "Supplier",
+      "created_at": "01-12-2023"
+  },
+  {
+      "id": 2,
+      "name": "XYZ Ltd.",
+      "TVA": "987654321",
+      "country": "Canada",
+      "type": "Client",
+      "created_at": "15-12-2023"
+  },
+  {
+      "id": 3,
+      "name": "123 Enterprises",
+      "TVA": "456789012",
+      "country": "France",
+      "type": "Supplier",
+      "created_at": "05-01-2024"
+  },
+  {
+      "id": 4,
+      "name": "Tech Innovations Inc.",
+      "TVA": "789012345",
+      "country": "Germany",
+      "type": "Client",
+      "created_at": "20-01-2024"
+  },
+  {
+      "id": 5,
+      "name": "Global Solutions SRL",
+      "TVA": "234567890",
+      "country": "Italy",
+      "type": "Supplier",
+      "created_at": "03-02-2024"
+  },
+  {
+      "id": 6,
+      "name": "Innovative Technologies Corp.",
+      "TVA": "567890123",
+      "country": "Spain",
+      "type": "Client",
+      "created_at": "18-02-2024"
+  },
+  {
+      "id": 7,
+      "name": "Sigma Innovations Ltd.",
+      "TVA": "890123456",
+      "country": "UK",
+      "type": "Supplier",
+      "created_at": "04-03-2024"
+  },
+  {
+      "id": 8,
+      "name": "Alpha Enterprises Inc.",
+      "TVA": "123456789",
+      "country": "USA",
+      "type": "Client",
+      "created_at": "19-03-2024"
+  },
+  {
+      "id": 9,
+      "name": "Beta Innovations Ltd.",
+      "TVA": "987654321",
+      "country": "Canada",
+      "type": "Supplier",
+      "created_at": "02-04-2024"
+  },
+  {
+      "id": 10,
+      "name": "Gamma Technologies SRL",
+      "TVA": "456789012",
+      "country": "France",
+      "type": "Client",
+      "created_at": "17-04-2024"
+  },
+  {
+      "id": 11,
+      "name": "Delta Solutions Inc.",
+      "TVA": "789012345",
+      "country": "Germany",
+      "type": "Supplier",
+      "created_at": "01-05-2024"
+  },
+  {
+      "id": 12,
+      "name": "Epsilon Innovations Ltd.",
+      "TVA": "234567890",
+      "country": "Italy",
+      "type": "Client",
+      "created_at": "16-05-2024"
+  },
+  {
+      "id": 13,
+      "name": "Zeta Global Ventures Corp.",
+      "TVA": "567890123",
+      "country": "Spain",
+      "type": "Supplier",
+      "created_at": "31-05-2024"
+  },
+  {
+      "id": 14,
+      "name": "Theta Technologies Inc.",
+      "TVA": "890123456",
+      "country": "UK",
+      "type": "Client",
+      "created_at": "15-06-2024"
+  },
+  {
+      "id": 15,
+      "name": "Iota Enterprises Ltd.",
+      "TVA": "123456789",
+      "country": "USA",
+      "type": "Supplier",
+      "created_at": "30-06-2024"
+  },
+  {
+      "id": 16,
+      "name": "Kappa Innovations Corp.",
+      "TVA": "987654321",
+      "country": "Canada",
+      "type": "Client",
+      "created_at": "15-07-2024"
+  },
+  {
+      "id": 17,
+      "name": "Lambda Solutions SRL",
+      "TVA": "456789012",
+      "country": "France",
+      "type": "Supplier",
+      "created_at": "30-07-2024"
+  },
+  {
+      "id": 18,
+      "name": "Mu Technologies Inc.",
+      "TVA": "789012345",
+      "country": "Germany",
+      "type": "Client",
+      "created_at": "14-08-2024"
+  },
+  {
+      "id": 19,
+      "name": "Nu Innovations Ltd.",
+      "TVA": "234567890",
+      "country": "Italy",
+      "type": "Supplier",
+      "created_at": "29-08-2024"
+  },
+  {
+      "id": 20,
+      "name": "Xi Global Enterprises SRL",
+      "TVA": "567890123",
+      "country": "Spain",
+      "type": "Client",
+      "created_at": "13-09-2024"
+  }
+]

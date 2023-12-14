@@ -1,0 +1,122 @@
+[
+  {
+    "invoice_number": "INV-001",
+    "due_dates": "15-01-2023",
+    "company": "ABC Company",
+    "created_at": "01-01-2023"
+  },
+  {
+    "invoice_number": "INV-002",
+    "due_dates": "20-01-2023",
+    "company": "XYZ Corporation",
+    "created_at": "05-01-2023"
+  },
+  {
+    "invoice_number": "INV-003",
+    "due_dates": "01-02-2023",
+    "company": "123 Enterprises",
+    "created_at": "10-01-2023"
+  },
+  {
+    "invoice_number": "INV-004",
+    "due_dates": "10-02-2023",
+    "company": "Global Ltd.",
+    "created_at": "15-01-2023"
+  },
+  {
+    "invoice_number": "INV-005",
+    "due_dates": "15-02-2023",
+    "company": "Tech Innovations",
+    "created_at": "20-01-2023"
+  },
+  {
+    "invoice_number": "INV-006",
+    "due_dates": "01-03-2023",
+    "company": "Beta Solutions",
+    "created_at": "25-01-2023"
+  },
+  {
+    "invoice_number": "INV-007",
+    "due_dates": "10-03-2023",
+    "company": "Gamma Corp",
+    "created_at": "30-01-2023"
+  },
+  {
+    "invoice_number": "INV-008",
+    "due_dates": "15-03-2023",
+    "company": "Delta Enterprises",
+    "created_at": "05-02-2023"
+  },
+  {
+    "invoice_number": "INV-009",
+    "due_dates": "01-04-2023",
+    "company": "Sigma Ltd.",
+    "created_at": "10-02-2023"
+  },
+  {
+    "invoice_number": "INV-010",
+    "due_dates": "10-04-2023",
+    "company": "Omega Innovations",
+    "created_at": "15-02-2023"
+  },
+  {
+    "invoice_number": "INV-011",
+    "due_dates": "15-04-2023",
+    "company": "Alpha Solutions",
+    "created_at": "20-02-2023"
+  },
+  {
+    "invoice_number": "INV-012",
+    "due_dates": "01-05-2023",
+    "company": "Epsilon Corp",
+    "created_at": "25-02-2023"
+  },
+  {
+    "invoice_number": "INV-013",
+    "due_dates": "10-05-2023",
+    "company": "Zeta Enterprises",
+    "created_at": "01-03-2023"
+  },
+  {
+    "invoice_number": "INV-014",
+    "due_dates": "15-05-2023",
+    "company": "Theta Ltd.",
+    "created_at": "05-03-2023"
+  },
+  {
+    "invoice_number": "INV-015",
+    "due_dates": "01-06-2023",
+    "company": "Iota Innovations",
+    "created_at": "10-03-2023"
+  },
+  {
+    "invoice_number": "INV-016",
+    "due_dates": "10-06-2023",
+    "company": "Kappa Solutions",
+    "created_at": "15-03-2023"
+  },
+  {
+    "invoice_number": "INV-017",
+    "due_dates": "15-06-2023",
+    "company": "Lambda Corp",
+    "created_at": "20-03-2023"
+  },
+  {
+    "invoice_number": "INV-018",
+    "due_dates": "01-07-2023",
+    "company": "Mu Enterprises",
+    "created_at": "25-03-2023"
+  },
+  {
+    "invoice_number": "INV-019",
+    "due_dates": "10-07-2023",
+    "company": "Nu Ltd.",
+    "created_at": "30-03-2023"
+  },
+  {
+    "invoice_number": "INV-020",
+    "due_dates": "15-07-2023",
+    "company": "Xi Innovations",
+    "created_at": "04-04-2023"
+  }
+]

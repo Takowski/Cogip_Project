@@ -1,0 +1,31 @@
+@import '../assets/css/Allinvoices.min.css';
+@import '../assets/css/Allcontacts.min.css';
+@import '../assets/css/footer.min.css';
+*{
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.yellow-bg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 44px;
+    left: 50px;
+    width: 60%;
+    height:18px;
+    background-color: rgb(253 224 71);
+    z-index: -1;
+
+  }
+
+.companies5{
+    width: 100%px;
+    display: flex;
+   
+
+}  
+.card{
+  width:900px;  
+}

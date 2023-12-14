@@ -4,6 +4,13 @@ export default {
   "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontSize: {
+        '2xs': '.55rem',
+    },
+  
+      spacing: {
+        '62': '15.75rem',
+      },
       colors:{
         'blue-bell': {
           '50': '#f2f4fb',
