@@ -69,6 +69,7 @@ function App() {
          />
        </card>
      </div>
+      <WorkBetter />
      
      </>
       } />
