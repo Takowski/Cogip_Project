@@ -46,7 +46,6 @@ function App() {
          />
        </card>
      </div>
-     <WorkBetter />
      <div className="companies5" >
        <card className="card">
          <CompanieTable
