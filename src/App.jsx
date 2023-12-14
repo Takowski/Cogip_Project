@@ -69,27 +69,27 @@ function App() {
          />
        </card>
      </div>
-     <WorkBetter />
+     
      </>
       } />
       <Route path="/AllCompanies" element={
       <CompanieTable 
-      fetchFive={true} 
-      pagination={false} 
+      fetchFive={false} 
+      pagination={true} 
       showSubHeaderComponent={false} 
       expandedRows={isExpanded} />
       } />
       <Route path="/AllContacts" element={
       <ContactsTable 
-      fetchFive={true} 
-      pagination={false} 
+      fetchFive={false} 
+      pagination={true} 
       showSubHeaderComponent={false} 
       expandedRows={isExpanded} />
       } />
       <Route path="/AllInvoices" element={
       <InvoicesTable
-      fetchFive={true}
-      pagination={false}
+      fetchFive={false}
+      pagination={true}
       showSubHeaderComponent={false}
       expandedRows={isExpanded} />
       } />
