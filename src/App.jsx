@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header_Cogip from './Header'
 import Footer from '../footer'
 import CompanieTable from './assets/json/yellowpage/Companiesyellow'
@@ -26,52 +27,67 @@ function App() {
 
   return (
     <Router>
-      <div>
-        <Header_Cogip />
-        <Switch>
-          <Route path='/home'>
-            <div className="companies5" >
-              <div className="card">
-                <InvoicesTable
-                  fetchFive={true}
-                  pagination={false}
-                  showSubHeaderComponent={false}
-                  expandedRows={isExpanded}
-                />
-              </div>
-            </div>
-          </Route>
-          <Route path='/companies'>
-            <div className="companies5" >
-              <div className="card">
-                <CompanieTable
-                  fetchFive={true}
-                  pagination={false}
-                  showSubHeaderComponent={false}
-                  expandedRows={isExpanded}
-                />
-              </div>
-            </div>
-          </Route>
-          <Route path='/contacts'>
-            <div className="companies5" >
-              <div className="card">
-                <ContactsTable
-                  fetchFive={true}
-                  pagination={false}
-                  showSubHeaderComponent={false}
-                  expandedRows={isExpanded}
-                />
-              </div>
-            </div>
-          </Route>
-          <Route path='/Companies'>
-            {/* Home page content goes here */}
-          </Route>
-        </Switch>
-      </div>
-      <Footer />
-    </Router>
-  );
+    <Header_Cogip />
+    <Routes>
+      <Route path="/" element={
+        <>
+       <div className="companies5" >
+       <card className="card">
+         <InvoicesTable
+           fetchFive={true}
+           pagination={false}
+           showSubHeaderComponent={false}
+           expandedRows={isExpanded}
+         />
+       </card>
+     </div>
+     <div className="companies5" >
+       <card className="card">
+         <CompanieTable
+           fetchFive={true}
+           pagination={false}
+           showSubHeaderComponent={false}
+           expandedRows={isExpanded}
+         />
+       </card>
+     </div>
+     <div className="companies5" >
+       <card className="card">
+         <ContactsTable
+           fetchFive={true}
+           pagination={false}
+           showSubHeaderComponent={false}
+           expandedRows={isExpanded}
+         />
+       </card>
+     </div>
+     </>
+      } />
+      <Route path="/AllCompanies" element={
+      <CompanieTable 
+      fetchFive={true} 
+      pagination={false} 
+      showSubHeaderComponent={false} 
+      expandedRows={isExpanded} />
+      } />
+      <Route path="/AllContacts" element={
+      <ContactsTable 
+      fetchFive={true} 
+      pagination={false} 
+      showSubHeaderComponent={false} 
+      expandedRows={isExpanded} />
+      } />
+      <Route path="/AllInvoices" element={
+      <InvoicesTable
+      fetchFive={true}
+      pagination={false}
+      showSubHeaderComponent={false}
+      expandedRows={isExpanded} />
+      } />
+      
+    </Routes>
+    <Footer />
+  </Router>
+);
 }
 export default App
