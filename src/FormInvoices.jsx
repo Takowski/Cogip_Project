@@ -1,5 +1,8 @@
 import React from "react";
 
+
+function FormInvoices() {
+
   return (
     <form className="">
       
@@ -29,3 +32,7 @@ import React from "react";
 
     </form>
   );
+}
+
+export default FormInvoices;
+
