@@ -92,6 +92,16 @@ function App() {
       showSubHeaderComponent={false}
       expandedRows={isExpanded} />
       } />
+      <Route path="/FormCompanies" element={
+      <FormCompanies />
+      } />
+      <Route path="/FormContacts" element={
+      <FormContacts />
+      } />
+      <Route path="/FormInvoices" element={
+      <FormInvoices />
+      } />
+      
       
     </Routes>
     <WorkBetter />
