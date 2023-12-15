@@ -1,5 +1,9 @@
+import { Link } from "react-router-dom";
+import React from "react";
 const Footer = () => {
     return (
+        <>
+        
       <footer>
         <hr className="yellowHr" />
         
@@ -37,14 +41,15 @@ const Footer = () => {
         <hr className="lightBlueHr" />
 
         <div className="grid-containerBottom">
-            <a href="#">HOME</a>
-            <a href="#">INVOICES</a>
-            <a href="#">COMPANIES</a>
-            <a href="#">CONTACTS</a>
+            <Link to ="/">HOME</Link>
+            <Link to= "/AllInvoices">INVOICES</Link>
+            <Link to ="/AllCompanies">COMPANIES</Link>
+            <Link to ="AllContacts">CONTACTS</Link>
             <a href="#">PRIVACY POLICY</a>
             <p className="copyright"style={{ gridColumn: "1 / -1" }}>Copyright © 2023. COGIP Inc.</p>
         </div>   
     </footer>
+    </>
   );
 };
     
