@@ -12,6 +12,7 @@ import Manage from './Manage'
 import FormeBizarre from './FormeBizarre'
 import WorkBetter from './WorkeBetter'
 import '../src/App.css'
+import Dashboard from './Dashboard'
 
 
 
@@ -106,7 +107,6 @@ function App() {
       
       
     </Routes>
-    
     <Footer />
   </Router>
 );

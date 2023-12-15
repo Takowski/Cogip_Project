@@ -44,7 +44,7 @@ const columns = [
   },
 ];
 
-function CompanieTable({ fetchFive, pagination, showSubHeaderComponent, expandedRows }) {
+function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, expandedRows }) {
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
   const [companies, setCompanies] = useState([]);
@@ -99,4 +99,4 @@ function CompanieTable({ fetchFive, pagination, showSubHeaderComponent, expanded
   );
 }
 
-export default CompanieTable;
+export default CompanieTableMauve;
