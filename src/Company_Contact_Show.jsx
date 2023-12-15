@@ -5,10 +5,11 @@ function Company_Contact_Show({data}) {
     <div>
       <h2 className='mt-6 mb-5 ml-10 text-2xl font-bold'>Contact people</h2>
       <div className="grid items-center w-2/3 grid-cols-2 gap-2 ml-10 mr-8">
-        <div className='flex items-center p-2 space-x-4 rounded bg-gray-300/20'>
-          <p className="text-xs font-bold ">{data.contact_name}</p>
-          {/* need to create a map when the contact are an array with more than one  */}
-        </div>
+        {data.contacts.map((contact, index) => (
+          <div key={index} className='flex items-center p-2 space-x-4 rounded bg-gray-300/20'>
+            <p className="text-xs font-bold ">{contact}</p>
+          </div>
+        ))}
       </div>
 
       <div className='flex items-center justify-end p-2 rounded'>
@@ -21,5 +22,4 @@ function Company_Contact_Show({data}) {
 }
 
 export default Company_Contact_Show;
-
        
