@@ -11,6 +11,7 @@ import FormInvoices from './FormInvoices'
 import Manage from './Manage'
 import FormeBizarre from './FormeBizarre'
 import WorkBetter from './WorkeBetter'
+import CompanyPage from './assets/json/yellowpage/ShowCompany'
 import '../src/App.css'
 import Dashboard from './Dashboard'
 
@@ -104,6 +105,7 @@ function App() {
       <Route path="/FormInvoices" element={
       <FormInvoices />
       } />
+      <Route path='/company/:id' element={<CompanyPage />} />
       
       
     </Routes>

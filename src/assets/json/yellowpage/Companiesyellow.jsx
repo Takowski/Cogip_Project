@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import DataTable from 'react-data-table-component';
 import FilterComponent from '../../../filter';
 import './yellow_table.css';
+import { Link } from 'react-router-dom';
 
 const ExpandedComponent = ({ data }) =>
   <div className='container flex flex-col p-3 gap-y-1'>
@@ -18,6 +19,7 @@ const columns = [
     selector: row => row.company_name,
     sortable: true,
     grow: 2,
+    cell: row => <Link to={`/company/${row.id}`}>{row.company_name}</Link>,
   },
   {
     name: 'TVA',
