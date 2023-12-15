@@ -10,6 +10,7 @@ const ExpandedComponent = ({ data }) =>
     <span>Country: {data.country}</span>
   </div>;
 
+
 const columns = [
   {
     name: 'Name',
@@ -18,19 +19,20 @@ const columns = [
     grow: 2,
   },
   {
-    name: 'TVA',
-    selector: row => row.tva,
+    name: 'Phone',
+    selector: row => row.phone,
+    sortable: true,
+    hide: 'md',
+},
+{
+    name: 'Email',
+    selector: row => row.email,
     sortable: true,
     hide: 'sm',
-  },
-  {
-    name: 'Country',
-    selector: row => row.country,
-    sortable: true,
-  },
+},
 ];
 
-function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, expandedRows }) {
+function ContactsTableMauve({ fetchFive, pagination, showSubHeaderComponent, expandedRows }) {
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
   const [companies, setCompanies] = useState([]);
@@ -38,8 +40,8 @@ function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
   useEffect(() => {
 
     const url = fetchFive
-      ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/companies'
-      : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies';
+      ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/contacts'
+      : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecontacts';
 
 
     fetch(url)
@@ -71,7 +73,7 @@ function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
 
   return (
     <DataTable
-      title="Last Companies"
+      title="Last Contacts"
       striped={true}
       columns={columns}
       data={filteredItems}
@@ -85,4 +87,4 @@ function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
   );
 }
 
-export default CompanieTableMauve;
+export default ContactsTableMauve;

@@ -11,26 +11,26 @@ const ExpandedComponent = ({ data }) =>
   </div>;
 
 const columns = [
-  {
-    name: 'Name',
-    selector: row => row.company_name,
-    sortable: true,
-    grow: 2,
-  },
-  {
-    name: 'TVA',
-    selector: row => row.tva,
-    sortable: true,
-    hide: 'sm',
-  },
-  {
-    name: 'Country',
-    selector: row => row.country,
-    sortable: true,
-  },
+    {
+        name: 'Invoice Number',
+        selector: row => row.ref,
+        sortable: true,
+        grow: 1,
+    },
+    {
+        name: 'Dates',
+        selector: row => row.date_due,
+        sortable: true,
+        hide: 'md',
+    },
+    {
+        name: 'Company',
+        selector: row => row.company_name,
+        sortable: true,
+    },
 ];
 
-function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, expandedRows }) {
+function InvoicesTableMauve({ fetchFive, pagination, showSubHeaderComponent, expandedRows }) {
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
   const [companies, setCompanies] = useState([]);
@@ -38,9 +38,9 @@ function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
   useEffect(() => {
 
     const url = fetchFive
-      ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/companies'
-      : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies';
-
+      ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/invoices'
+      : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fiveinvoices';
+      
 
     fetch(url)
       .then(response => response.json())
@@ -71,7 +71,7 @@ function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
 
   return (
     <DataTable
-      title="Last Companies"
+      title="Last Invoices"
       striped={true}
       columns={columns}
       data={filteredItems}
@@ -85,4 +85,4 @@ function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
   );
 }
 
-export default CompanieTableMauve;
+export default InvoicesTableMauve;

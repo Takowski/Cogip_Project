@@ -1,4 +1,9 @@
 import React from 'react';
+import CompanieTableMauve from './TableauCompaniesMauves';
+import ContactsTableMauve from './TableauContactsMauves';
+import InvoicesTableMauve from './TableauInvoicesMauves';
+import StatisticsMauves from './StatisticsMauves';
+
 
 const DashboardV2 = () => {
   return (
@@ -79,123 +84,19 @@ const DashboardV2 = () => {
 
 
         <section className='p-5 bg-white m-auto rounded-lg box-border md:hidden'>
-            <h2 className='text-xl p-1'>Statistics</h2>
-            <hr />
-            <div className='flex justify-center align-middle p-5'>
-                <div style={{ backgroundColor: '#4D4CAC' }} className='h-70 w-70 rounded-full mr-4 flex items-center justify-center'><p className='text-white ml-2'>245 invoices</p></div>  {/*ajouter le nombre d'invoice de l'API*/}
-                <div style={{ backgroundColor: '#9698D6' }} className='h-70 w-70 rounded-full mr-4 flex items-center justify-center'><p className='text-white ml-2'>245 contacts</p></div> {/*ajouter le nombre de company de l'API*/}
-                <div style={{ backgroundColor: '#FF808B' }} className='h-70 w-70 rounded-full mr-4 flex items-center justify-center'><p className='text-white ml-2'>245 companies</p></div> {/*ajouter le nombre de contact de l'API*/}
-            </div>
-
+            <StatisticsMauves />
         </section>
 
         <section className='bg-white p-5 m-auto rounded-lg box-border md:hidden'>
-            <h2 className='text-xl p-1'>Last Invoices</h2>
-            <hr />
-            <table> {/*tableau à remplir avec les données de l'API*/}
-                <thead>
-                    <tr>
-                    <th className="px-4 py-2">Invoice Number</th>
-                    <th className="px-4 py-2">Dates</th>
-                    <th className="px-4 py-2">Company</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td className="border px-4 py-2">INV-001</td>
-                    <td className="border px-4 py-2">2022-01-01</td>
-                    <td className="border px-4 py-2">Company A</td>
-                    </tr>
-                    <tr>
-                    <td className="border px-4 py-2">INV-002</td>
-                    <td className="border px-4 py-2">2022-01-02</td>
-                    <td className="border px-4 py-2">Company B</td>
-                    </tr>
-                    <tr>
-                    <td className="border px-4 py-2">INV-003</td>
-                    <td className="border px-4 py-2">2022-01-03</td>
-                    <td className="border px-4 py-2">Company C</td>
-                    </tr>
-                    <tr>
-                    <td className="border px-4 py-2">INV-004</td>
-                    <td className="border px-4 py-2">2022-01-04</td>
-                    <td className="border px-4 py-2">Company D</td>
-                    </tr>
-                </tbody>
-            </table>
+            <InvoicesTableMauve />
         </section>
 
         <section className='bg-white p-5 m-auto rounded-lg box-border md:hidden'>
-            <h2 className='text-xl p-1'>Last Contacts</h2>
-            <hr />
-            <table> {/*tableau à remplir avec les données de l'API*/}
-                <thead>
-                    <tr>
-                    <th className="px-4 py-2">Invoice Number</th>
-                    <th className="px-4 py-2">Dates</th>
-                    <th className="px-4 py-2">Company</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td className="border px-4 py-2">INV-001</td>
-                    <td className="border px-4 py-2">2022-01-01</td>
-                    <td className="border px-4 py-2">Company A</td>
-                    </tr>
-                    <tr>
-                    <td className="border px-4 py-2">INV-002</td>
-                    <td className="border px-4 py-2">2022-01-02</td>
-                    <td className="border px-4 py-2">Company B</td>
-                    </tr>
-                    <tr>
-                    <td className="border px-4 py-2">INV-003</td>
-                    <td className="border px-4 py-2">2022-01-03</td>
-                    <td className="border px-4 py-2">Company C</td>
-                    </tr>
-                    <tr>
-                    <td className="border px-4 py-2">INV-004</td>
-                    <td className="border px-4 py-2">2022-01-04</td>
-                    <td className="border px-4 py-2">Company D</td>
-                    </tr>
-                </tbody>
-            </table>
+            <ContactsTableMauve />
         </section>        
         
         <section className='bg-white p-5 m-auto rounded-lg box-border md:hidden'>
-            <h2 className='text-xl p-5'>Last Companies</h2>
-            
-            {/* <hr />
-            <table>
-                <thead>
-                    <tr>
-                    <th className="px-4 py-2">Invoice Number</th>
-                    <th className="px-4 py-2">Dates</th>
-                    <th className="px-4 py-2">Company</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td className="border px-4 py-2">INV-001</td>
-                    <td className="border px-4 py-2">2022-01-01</td>
-                    <td className="border px-4 py-2">Company A</td>
-                    </tr>
-                    <tr>
-                    <td className="border px-4 py-2">INV-002</td>
-                    <td className="border px-4 py-2">2022-01-02</td>
-                    <td className="border px-4 py-2">Company B</td>
-                    </tr>
-                    <tr>
-                    <td className="border px-4 py-2">INV-003</td>
-                    <td className="border px-4 py-2">2022-01-03</td>
-                    <td className="border px-4 py-2">Company C</td>
-                    </tr>
-                    <tr>
-                    <td className="border px-4 py-2">INV-004</td>
-                    <td className="border px-4 py-2">2022-01-04</td>
-                    <td className="border px-4 py-2">Company D</td>
-                    </tr>
-                </tbody>
-            </table> */}
+            <CompanieTableMauve />
         </section>
     </div>
 
@@ -204,125 +105,22 @@ const DashboardV2 = () => {
 
 
             <section className='p-5 w-507 h-403 bg-white m-auto rounded-lg box-border'>
-                <h2 className='text-xl p-1'>Statistics</h2>
-                <hr />
-                <div className='flex justify-center align-middle p-5'>
-                    <div style={{ backgroundColor: '#4D4CAC' }} className='h-70 w-70 rounded-full mr-4 flex items-center justify-center'><p className='text-white ml-2'>245 invoices</p></div>  {/*ajouter le nombre d'invoice de l'API*/}
-                    <div style={{ backgroundColor: '#9698D6' }} className='h-70 w-70 rounded-full mr-4 flex items-center justify-center'><p className='text-white ml-2'>245 contacts</p></div> {/*ajouter le nombre de company de l'API*/}
-                    <div style={{ backgroundColor: '#FF808B' }} className='h-70 w-70 rounded-full mr-4 flex items-center justify-center'><p className='text-white ml-2'>245 companies</p></div> {/*ajouter le nombre de contact de l'API*/}
-                </div>
-
+                <StatisticsMauves />
             </section>
 
             <section className='bg-white p-5 m-auto rounded-lg box-border w-507 h-403'>
-                <h2 className='text-xl p-1'>Last Invoices</h2>
-                <hr />
-                <table> {/*tableau à remplir avec les données de l'API*/}
-                    <thead>
-                        <tr>
-                        <th className="px-4 py-2">Invoice Number</th>
-                        <th className="px-4 py-2">Dates</th>
-                        <th className="px-4 py-2">Company</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <td className="border px-4 py-2">INV-001</td>
-                        <td className="border px-4 py-2">2022-01-01</td>
-                        <td className="border px-4 py-2">Company A</td>
-                        </tr>
-                        <tr>
-                        <td className="border px-4 py-2">INV-002</td>
-                        <td className="border px-4 py-2">2022-01-02</td>
-                        <td className="border px-4 py-2">Company B</td>
-                        </tr>
-                        <tr>
-                        <td className="border px-4 py-2">INV-003</td>
-                        <td className="border px-4 py-2">2022-01-03</td>
-                        <td className="border px-4 py-2">Company C</td>
-                        </tr>
-                        <tr>
-                        <td className="border px-4 py-2">INV-004</td>
-                        <td className="border px-4 py-2">2022-01-04</td>
-                        <td className="border px-4 py-2">Company D</td>
-                        </tr>
-                    </tbody>
-                </table>
+               <InvoicesTableMauve />
             </section>
 
             <section className='bg-white p-5 m-auto rounded-lg box-border w-507 h-403'>
-                <h2 className='text-xl p-1'>Last Contacts</h2>
-                <hr />
-                <table> {/*tableau à remplir avec les données de l'API*/}
-                    <thead>
-                        <tr>
-                        <th className="px-4 py-2">Invoice Number</th>
-                        <th className="px-4 py-2">Dates</th>
-                        <th className="px-4 py-2">Company</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <td className="border px-4 py-2">INV-001</td>
-                        <td className="border px-4 py-2">2022-01-01</td>
-                        <td className="border px-4 py-2">Company A</td>
-                        </tr>
-                        <tr>
-                        <td className="border px-4 py-2">INV-002</td>
-                        <td className="border px-4 py-2">2022-01-02</td>
-                        <td className="border px-4 py-2">Company B</td>
-                        </tr>
-                        <tr>
-                        <td className="border px-4 py-2">INV-003</td>
-                        <td className="border px-4 py-2">2022-01-03</td>
-                        <td className="border px-4 py-2">Company C</td>
-                        </tr>
-                        <tr>
-                        <td className="border px-4 py-2">INV-004</td>
-                        <td className="border px-4 py-2">2022-01-04</td>
-                        <td className="border px-4 py-2">Company D</td>
-                        </tr>
-                    </tbody>
-                </table>
+               <ContactsTableMauve />
             </section>        
 
             <section className='bg-white p-5 m-auto rounded-lg box-border w-507 h-403'>
-                <h2 className='text-xl p-5'>Last Companies</h2>
-                <hr />
-                <table> {/*tableau à remplir avec les données de l'API*/}
-                    <thead>
-                        <tr>
-                        <th className="px-4 py-2">Invoice Number</th>
-                        <th className="px-4 py-2">Dates</th>
-                        <th className="px-4 py-2">Company</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <td className="border px-4 py-2">INV-001</td>
-                        <td className="border px-4 py-2">2022-01-01</td>
-                        <td className="border px-4 py-2">Company A</td>
-                        </tr>
-                        <tr>
-                        <td className="border px-4 py-2">INV-002</td>
-                        <td className="border px-4 py-2">2022-01-02</td>
-                        <td className="border px-4 py-2">Company B</td>
-                        </tr>
-                        <tr>
-                        <td className="border px-4 py-2">INV-003</td>
-                        <td className="border px-4 py-2">2022-01-03</td>
-                        <td className="border px-4 py-2">Company C</td>
-                        </tr>
-                        <tr>
-                        <td className="border px-4 py-2">INV-004</td>
-                        <td className="border px-4 py-2">2022-01-04</td>
-                        <td className="border px-4 py-2">Company D</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <CompanieTableMauve />
             </section>
             </div>
-                </div>
+            </div>
                     
     </main>
     </body>

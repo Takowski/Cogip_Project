@@ -13,7 +13,9 @@ import FormeBizarre from './FormeBizarre'
 import WorkBetter from './WorkeBetter'
 import CompanyPage from './assets/json/yellowpage/ShowCompany'
 import '../src/App.css'
-import Dashboard from './Dashboard'
+import DashboardV2 from './dashboardV2';
+
+
 
 
 
