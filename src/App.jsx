@@ -13,6 +13,7 @@ import FormeBizarre from './FormeBizarre'
 import WorkBetter from './WorkeBetter'
 import CompanyPage from './assets/json/yellowpage/ShowCompany'
 import '../src/App.css'
+import Login from './Login';
 
 
 
@@ -105,6 +106,7 @@ function App() {
       <FormInvoices />
       } />
       <Route path='/company/:id' element={<CompanyPage />} />
+      <Route path='/login' element={<Login />} />
       
       
     </Routes>
