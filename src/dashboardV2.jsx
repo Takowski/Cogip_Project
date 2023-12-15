@@ -163,8 +163,9 @@ const DashboardV2 = () => {
         
         <section className='bg-white p-5 m-auto rounded-lg box-border md:hidden'>
             <h2 className='text-xl p-5'>Last Companies</h2>
-            <hr />
-            <table> {/*tableau à remplir avec les données de l'API*/}
+            
+            {/* <hr />
+            <table>
                 <thead>
                     <tr>
                     <th className="px-4 py-2">Invoice Number</th>
@@ -194,7 +195,7 @@ const DashboardV2 = () => {
                     <td className="border px-4 py-2">Company D</td>
                     </tr>
                 </tbody>
-            </table>
+            </table> */}
         </section>
     </div>
 
