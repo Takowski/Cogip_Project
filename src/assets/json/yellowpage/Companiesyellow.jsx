@@ -19,7 +19,7 @@ const columns = [
     selector: row => row.company_name,
     sortable: true,
     grow: 2,
-    cell: row => <Link to={`/company/${row.company_name}`}>{row.company_name}</Link>,
+    cell: row => <Link to={`/company/${row.id}`}>{row.company_name}</Link>,
   },
   {
     name: 'TVA',

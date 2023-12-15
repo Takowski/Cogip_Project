@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
 import Header_Cogip from './Header'
 import Footer from '../footer'
 import CompanieTable from './assets/json/yellowpage/Companiesyellow'
@@ -12,8 +11,7 @@ import FormInvoices from './FormInvoices'
 import Manage from './Manage'
 import FormeBizarre from './FormeBizarre'
 import WorkBetter from './WorkeBetter'
-import Company_Name from './Company_Name'
-import Company_Contact_Show from './Company_Contact_Show';
+import CompanyPage from './assets/json/yellowpage/ShowCompany'
 import '../src/App.css'
 
 
@@ -104,11 +102,7 @@ function App() {
       <Route path="/FormInvoices" element={
       <FormInvoices />
       } />
-      <Route path='/company/:name' element={
-      <>  
-      <Company_Name />
-      <Company_Contact_Show/>
-      </>} />
+      <Route path='/company/:id' element={<CompanyPage />} />
       
       
     </Routes>

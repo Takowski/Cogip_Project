@@ -1,19 +1,13 @@
 import React from "react";
 
-function Company_Contact_Show() {
-        
+function Company_Contact_Show({data}) {
   return (
     <div>
       <h2 className='mt-6 mb-5 ml-10 text-2xl font-bold'>Contact people</h2>
       <div className="grid items-center w-2/3 grid-cols-2 gap-2 ml-10 mr-8">
         <div className='flex items-center p-2 space-x-4 rounded bg-gray-300/20'>
-          <img className="object-cover w-10 h-10 rounded-full" src="woman_pic.jpg" alt="bg" />
-          <p className="text-xs font-bold ">Bertram Gilfoyle</p>
-        </div>
-  
-        <div className='flex items-center p-2 space-x-4 rounded bg-gray-300/20'>
-          <img className="object-cover w-10 h-10 rounded-full" src="man_pic.jpg" alt="bg" />
-          <p className="text-xs font-bold">Henry George</p>
+          <p className="text-xs font-bold ">{data.contact_name}</p>
+          {/* need to create a map when the contact are an array with more than one  */}
         </div>
       </div>
 
