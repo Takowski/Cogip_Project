@@ -100,7 +100,7 @@ function App() {
         <>
           <Header_Cogip />
           <FormeBizarre />
-          <CompanieTable 
+          <ContactsTable 
             fetchFive={false} 
             pagination={true} 
             showSubHeaderComponent={false} 
@@ -114,7 +114,7 @@ function App() {
         <>
           <Header_Cogip />
           <FormeBizarre />
-          <CompanieTable 
+          <InvoicesTable 
             fetchFive={false} 
             pagination={true} 
             showSubHeaderComponent={false} 
