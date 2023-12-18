@@ -11,7 +11,12 @@ import FormInvoices from './FormInvoices'
 import Manage from './Manage'
 import FormeBizarre from './FormeBizarre'
 import WorkBetter from './WorkeBetter'
+import CompanyPage from './assets/json/yellowpage/ShowCompany'
 import '../src/App.css'
+import DashboardV2 from './dashboardV2';
+import StatisticsMauves from './StatisticsMauves';
+
+
 
 
 
@@ -69,26 +74,28 @@ function App() {
          />
        </card>
      </div>
+     <WorkBetter />
+     
      </>
       } />
       <Route path="/AllCompanies" element={
       <CompanieTable 
-      fetchFive={true} 
-      pagination={false} 
+      fetchFive={false} 
+      pagination={true} 
       showSubHeaderComponent={false} 
       expandedRows={isExpanded} />
       } />
       <Route path="/AllContacts" element={
       <ContactsTable 
-      fetchFive={true} 
-      pagination={false} 
+      fetchFive={false} 
+      pagination={true} 
       showSubHeaderComponent={false} 
       expandedRows={isExpanded} />
       } />
       <Route path="/AllInvoices" element={
       <InvoicesTable
-      fetchFive={true}
-      pagination={false}
+      fetchFive={false}
+      pagination={true}
       showSubHeaderComponent={false}
       expandedRows={isExpanded} />
       } />
@@ -101,10 +108,10 @@ function App() {
       <Route path="/FormInvoices" element={
       <FormInvoices />
       } />
+      <Route path='/company/:id' element={<CompanyPage />} />
       
-      
+      <Route path="/dashboard" element={<DashboardV2 />} />
     </Routes>
-    <WorkBetter />
     <Footer />
   </Router>
 );
