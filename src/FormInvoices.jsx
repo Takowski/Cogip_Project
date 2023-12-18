@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 
 function FormInvoices() {
+  const [companyName, setCompanyName] = useState("");
+  const [companyList, setCompanyList] = useState([]);
+
+  const handleCompanyNameChange = (event) => {
+    setCompanyName(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setCompanyList([...companyList, companyName]);
+    setCompanyName("");
+  };
 
   return (
     <form className="mt-2 mb-2 ml-2 mr-2 ">
@@ -22,15 +34,15 @@ function FormInvoices() {
         className=" mb-6 shadow-sm bg-neutral-100 border-gray-300 text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
       />
 
-      <input
+<input
         type="text"
+        value={companyName}
+        onChange={handleCompanyNameChange}
         placeholder="Company Name"
         className=" mb-6 shadow-sm bg-neutral-100 border-gray-300 text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
       />
 
-        {/* Put an array wuth all the companies here */}
-
-        {/* Add a due date with a calendar when creating an invoice */}
+      
 
         <input
         type="date"
