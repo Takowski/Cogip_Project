@@ -5,11 +5,11 @@ import InvoicesTableMauve from './TableauInvoicesMauves';
 import StatisticsMauves from './StatisticsMauves';
 
 
+
 const DashboardV2 = () => {
   return (
     <>
-    <div style={{ maxWidth: '1460px', margin: '0 auto' }}>
-    <body className=' bg-white-lilac-50 h-full '>
+    <body className=' bg-white-lilac-50 h-full' style={{ maxWidth: '1460px', margin: '0 auto' }}>
         
     <header className='p-5'>
 
@@ -69,7 +69,7 @@ const DashboardV2 = () => {
             
             <div className=' p-14 rounded-xl md:block hidden  bg-blue-bell-400 text-white'>
                 <h1 className='text-3xl ml:hidden'>Welcome back Henry !</h1>
-                <p className='text-base text ml:hidden'>You can here add an invoice, a company and some contacts</p>
+                <p className='text-base  text-left ml:hidden'>You can here add an invoice, a company and some contacts</p>
             </div>
         </section>
 
@@ -82,8 +82,6 @@ const DashboardV2 = () => {
 
     <main>
     <div className='grid md:grid-cols-2 gap-4'> {/*MOBILE VERSION*/}
-
-
         <section className='p-5 bg-white m-auto rounded-lg box-border md:hidden'>
             <StatisticsMauves />
         </section>
@@ -101,31 +99,29 @@ const DashboardV2 = () => {
         </section>
     </div>
 
-    <div> {/*DESKTOP VERSION*/}
-    <div className="mt-auto flex justify-between items-center hidden md:flex md:flex-wrap md:justify-center md:items-center fixed md:left-72 top-450 bg-white-lilac-50 gap-6"> 
-
-
-            <section className='p-5 w-507 h-403 bg-white m-auto rounded-lg box-border'>
+    <div className='hidden md:block'> {/*DESKTOP VERSION*/}
+        <div className="bg-white-lilac-50 ml-72 flex flex-wrap gap-6"> 
+            <section className='p-5  bg-white m-auto rounded-lg box-border'>
                 <StatisticsMauves />
             </section>
 
-            <section className='bg-white p-5 m-auto rounded-lg box-border w-507 h-403'>
-               <InvoicesTableMauve />
+            <section className='bg-white p-5 m-auto rounded-lg box-border'>
+                <InvoicesTableMauve />
             </section>
 
-            <section className='bg-white p-5 m-auto rounded-lg box-border w-507 h-403'>
-               <ContactsTableMauve />
+            <section className='bg-white p-5 m-auto rounded-lg box-border'>
+                <ContactsTableMauve />
             </section>        
 
-            <section className='bg-white p-5 m-auto rounded-lg box-border w-507 h-403'>
+            <section className='bg-white p-5 m-auto rounded-lg box-border'>
                 <CompanieTableMauve />
             </section>
-            </div>
-            </div>
+        </div>
+    </div>
                     
     </main>
     </body>
-    </div>
+    
     </>
   );
 };

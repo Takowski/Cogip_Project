@@ -78,7 +78,7 @@ function App() {
        </card>
      </div>
      <WorkBetter />
-     
+     <Footer />
      </>
       } />
     <Route path="/AllCompanies"   
@@ -92,6 +92,7 @@ function App() {
             showSubHeaderComponent={false} 
             expandedRows={isExpanded} 
           />
+          <Footer />
         </>
       } 
     />
@@ -106,6 +107,7 @@ function App() {
             showSubHeaderComponent={false} 
             expandedRows={isExpanded} 
           />
+          <Footer />
         </>
       } 
     />
@@ -120,6 +122,7 @@ function App() {
             showSubHeaderComponent={false} 
             expandedRows={isExpanded} 
           />
+          <Footer />
         </>
       } 
     />
@@ -138,13 +141,14 @@ function App() {
         <Header_Cogip />
         <FormeBizarre />
         <CompanyPage />
+        <Footer />
       </>
     } />
       
       <Route path="/dashboard" element={<DashboardV2 />} />
     </Routes>
 
-  <Footer />
+  
   </Router>
   </>
 );

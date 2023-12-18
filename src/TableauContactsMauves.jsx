@@ -83,6 +83,7 @@ function ContactsTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
         backgroundColor: 'white',
         color: '#000', 
         fontSize: '18px', 
+        border: '1px solid white',
       },
     },
   };
