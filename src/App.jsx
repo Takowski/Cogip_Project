@@ -13,6 +13,8 @@ import FormeBizarre from './FormeBizarre'
 import WorkBetter from './WorkeBetter'
 import CompanyPage from './assets/json/yellowpage/ShowCompany'
 import '../src/App.css'
+import DashboardV2 from './dashboardV2';
+import StatisticsMauves from './StatisticsMauves';
 import Login from './Login';
 
 
@@ -71,7 +73,7 @@ function App() {
          />
        </card>
      </div>
-      <WorkBetter />
+     <WorkBetter />
      
      </>
       } />
@@ -108,9 +110,8 @@ function App() {
       <Route path='/company/:id' element={<CompanyPage />} />
       <Route path='/login' element={<Login />} />
       
-      
+      <Route path="/dashboard" element={<DashboardV2 />} />
     </Routes>
-    
     <Footer />
   </Router>
 );
