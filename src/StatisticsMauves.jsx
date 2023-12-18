@@ -33,12 +33,12 @@ const StatisticsMauves = () => {
 
   return(
     <> 
-    <h2>Statistics</h2>
+    <p className='text-4xl text-left'>Statistics</p>
     <hr />
     <div className='flex justify-center p-5 bg-white m-auto rounded-lg box-border'>
-      <div style={{ backgroundColor: '#4D4CAC' }} className='h-70 w-70 rounded-full mr-4 flex items-center justify-center'><p className='text-white'>{totalInvoices} invoices</p></div>
-      <div style={{ backgroundColor: '#9698D6' }} className='h-70 w-70 rounded-full mr-4 flex items-center justify-center'><p className='text-white'>{totalContacts} contacts</p></div> 
-      <div style={{ backgroundColor: '#FF808B' }} className='h-70 w-70 rounded-full mr-4 flex items-center justify-center'><p className='text-white'>{totalCompanies} companies</p></div>
+      <div style={{ backgroundColor: '#4D4CAC' }} className='mt-20 h-24 w-24 rounded-full mr-4 flex items-center justify-center'><p className='text-white text-lg'>{totalInvoices} invoices</p></div>
+      <div style={{ backgroundColor: '#9698D6' }} className='mt-20 h-24 w-24 rounded-full mr-4 flex items-center justify-center'><p className='text-white text-lg'>{totalContacts} contacts</p></div> 
+      <div style={{ backgroundColor: '#FF808B' }} className='mt-20 h-24 w-24 rounded-full mr-4 flex items-center justify-center'><p className='text-white text-lg'>{totalCompanies} companies</p></div>
     </div>
     
     </>

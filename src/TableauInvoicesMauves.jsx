@@ -69,6 +69,22 @@ function InvoicesTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
     ) : null;
   }, [filterText, resetPaginationToggle, showSubHeaderComponent]);
 
+  const customStyles = {
+    cells: {
+      style: {
+        fontSize: '16px', 
+      },
+    },
+    headCells: {
+      style: {
+        backgroundColor: 'white', 
+        color: '#000', 
+        fontSize: '18px', 
+ 
+        
+      },
+    },
+  };
   return (
     <DataTable
       title="Last Invoices"
@@ -81,6 +97,7 @@ function InvoicesTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
       paginationResetDefaultPage={resetPaginationToggle}
       subHeader
       subHeaderComponent={subHeaderComponentMemo}
+      customStyles={customStyles}
     />
   );
 }
