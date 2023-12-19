@@ -7,7 +7,7 @@ function Company_Contact_Show({data}) {
     Promise.all(data.contacts.map(contactId => 
       fetch(`https://api-cogip-329f9c72c66d.herokuapp.com/api/contacts/${contactId}`)
         .then(response => response.json())
-        .then(contact => contact.data[0])  // Extract the data property
+        .then(contact => contact.data)  // Extract the data property directly
     ))
     .then(contactDetails => {
       setContactData(contactDetails);
