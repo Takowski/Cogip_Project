@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header_Cogip from './Header'
 import Footer from '../footer'
+import FormeBizarre from './FormeBizarre'
 import CompanieTable from './assets/json/yellowpage/Companiesyellow'
 import ContactsTable from './assets/json/yellowpage/Contactsyellow'
 import InvoicesTable from './assets/json/yellowpage/Invoicesyellow'
@@ -9,12 +10,13 @@ import FormCompanies from './FormCompanies'
 import FormContacts from './FormContacts'
 import FormInvoices from './FormInvoices'
 import Manage from './Manage'
-import FormeBizarre from './FormeBizarre'
 import WorkBetter from './WorkeBetter'
 import CompanyPage from './assets/json/yellowpage/ShowCompany'
 import '../src/App.css'
 import DashboardV2 from './dashboardV2';
 import StatisticsMauves from './StatisticsMauves';
+import ShowContact from './assets/json/yellowpage/ShowContact';
+import ShowInvoice from './assets/json/yellowpage/ShowInvoice';
 
 
 
@@ -141,6 +143,24 @@ function App() {
         <Header_Cogip />
         <FormeBizarre />
         <CompanyPage />
+        <Footer />
+      </>
+    } />
+
+    <Route path='/contact/:id' element={
+      <>
+        <Header_Cogip />
+        <FormeBizarre />
+        <ShowContact />
+        <Footer />
+      </>
+    } />
+
+    <Route path='/invoices/:id' element={
+      <>
+        <Header_Cogip />
+        <FormeBizarre />
+        <ShowInvoice />
         <Footer />
       </>
     } />

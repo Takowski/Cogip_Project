@@ -20,8 +20,6 @@ function Header_Cogip() {
           <p className='mt-1.5 ml-8 mr-16 font-bold text-2xl'>Login</p>
         </div>
       </div>
- 
-      
     </>
 
   );

@@ -4,15 +4,37 @@ import './App.css';
 function Company_Name({data}) {
 
   return (
-    <div>
-      <h2 className='mt-6 mb-5 ml-10 text-3xl font-bold yellow-bg'>{data.company_name}</h2>
-      <p className='mt-6 ml-10 text-xs font-bold leading-4'>Name: {data.company_name}</p>
-      <p className='ml-10 text-xs font-bold leading-4'>TVA: {data.tva}</p>
-      <p className='ml-10 text-xs font-bold leading-4'>Country: {data.country}</p>
-      <p className='ml-10 text-xs font-bold leading-4'>Type: {data.type_name}</p>
-      <p className='mt-6 border border-solid'></p>
-    </div>
+    <>
+      <style jsx>{`
+  .underline-after {
+      position: relative;
+  }
+
+  .underline-after::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      left: 15px;
+      width: 100%;
+      height: 20px; 
+      background-color: #FCD34D;
+      z-index: -1;
+  }
+  `}</style>
+      <div className="flex flex-wrap justify-around items-center w-3/4  mt-16">
+        <div className="text-left"> 
+          <h2 className="text-left text-4xl underline-after">{data.company_name}</h2>
+          <p className="text-left mt-3 text-lg"><strong>Name</strong>: {data.company_name}</p>
+          <p className='text-left text-lg'><strong>TVA</strong>: {data.tva}</p>
+          <p className='text-left text-lg'><strong>Country</strong>: {data.country}</p>
+          <p className='text-left text-lg'><strong>Type</strong>: {data.type_name}</p>
+        </div>
+      </div>
+    </>
+
   );
 }
 
 export default Company_Name;
+

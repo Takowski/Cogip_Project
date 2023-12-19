@@ -24,12 +24,7 @@ function Company_Contact_Show({data}) {
             <p className="text-xs font-bold ">{contact.name}</p>
           </div>
         ))}
-      </div>
-
-      <div className='flex items-center justify-end p-2 rounded'>
-        <img className="absolute object-cover w-12 h-12 top-62 " src="clipboard.jpg" alt="bg" />
-      </div>
-  
+      </div>  
       <p className='mt-6 mb-6 border border-solid'></p>
     </div>
   );

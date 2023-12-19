@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Contact_Name from './Contact_Name';
+import InvoiceDetails from './InvoiceDetails';
 
-function ShowContact() {
-  const [contactData, setContactData] = useState(null);
+function ShowInvoice() {
+  const [invoiceData, setInvoiceData] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://api-cogip-329f9c72c66d.herokuapp.com/api/contacts/${id}`)
+    fetch(`https://api-cogip-329f9c72c66d.herokuapp.com/api/invoices/${id}`)
       .then(response => response.json())
       .then(data => {
-        setContactData(data);
+        setInvoiceData(data);
       })
       .catch(error => {
         console.error('There was an error!', error);
@@ -19,9 +19,9 @@ function ShowContact() {
 
   return (
     <div>
-      {contactData ? <Contact_Name data={contactData} /> : 'Loading...'}
+      {invoiceData ? <InvoiceDetails data={invoiceData} /> : 'Loading...'}
     </div>
   );
 }
 
-export default ShowContact;
+export default ShowInvoice;

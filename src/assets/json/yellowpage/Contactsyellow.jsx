@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import DataTable from 'react-data-table-component';
 import FilterComponent from '../../../filter';
 import './yellow_table.css';
@@ -17,7 +18,7 @@ const columns = [
         name: 'Name',
         selector: row => row.name,
         sortable: true,
-       
+        cell: row => (<Link to={`/contact/${row.id}`}>{row.name}</Link>),
     },
     {
         name: 'Phone',
