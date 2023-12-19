@@ -51,9 +51,6 @@ const DashboardV2 = () => {
                 <a className='text-violet-300' href="#">Logout</a>
                 </div>
             </section>
-            
-        
-
         </div>
 
 
