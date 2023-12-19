@@ -8,16 +8,31 @@ const FormContacts = () => {
   const [companyName, setCompanyName] = useState("");
   const [companies, setCompanies] = useState([]);
 
+  const submitForm = async (formData) => {
+    try {
+      const response = await axios.post('https://api-cogip-329f9c72c66d.herokuapp.com/api/add-contact', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      console.log(response.data);
+      // Handle success here
+    } catch (error) {
+      console.error(error);
+      // Handle error here
+    }
+  };
+
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
         const response = await axios.get('https://api-cogip-329f9c72c66d.herokuapp.com/api/companies');
-        setCompanies(response.data);
+        setCompanies(response.data.data);  // Adjusted this line
       } catch (error) {
         console.error(error);
       }
     };
-
+  
     fetchCompanies();
   }, []);
 
@@ -66,17 +81,17 @@ const FormContacts = () => {
       />
 
 
-      <select
-        value={companyName}
-        onChange={(e) => setCompanyName(e.target.value)}
-        className=" mb-6 shadow-sm bg-neutral-100 border-gray-300 text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-      >
-        {companies.map((company) => (
-          <option key={company.id} value={company.name}>
-            {company.name}
-          </option>
-        ))}
-      </select>
+<select
+  value={companyName}
+  onChange={(e) => setCompanyName(e.target.value)}
+  className=" mb-6 shadow-sm bg-neutral-100 border-gray-300 text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+>
+  {Array.isArray(companies) && companies.map((company) => (
+    <option key={company.id} value={company.company_name}>  {/* Adjusted this line */}
+      {company.company_name}  {/* Adjusted this line */}
+    </option>
+  ))}
+</select>
       <button type="submit">Submit</button>
     </form>
   );
