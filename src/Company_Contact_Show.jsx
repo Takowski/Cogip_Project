@@ -25,7 +25,6 @@ function Company_Contact_Show({data}) {
           </div>
         ))}
       </div>  
-      <p className='mt-6 mb-6 border border-solid'></p>
     </div>
   );
 }
