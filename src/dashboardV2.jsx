@@ -5,10 +5,11 @@ import InvoicesTableMauve from './TableauInvoicesMauves';
 import StatisticsMauves from './StatisticsMauves';
 
 
+
 const DashboardV2 = () => {
   return (
     <>
-    <body className=' bg-white-lilac-50 h-full '>
+    <body className=' bg-white-lilac-50 h-full' style={{ maxWidth: '1460px', margin: '0 auto' }}>
         
     <header className='p-5'>
 
@@ -26,7 +27,7 @@ const DashboardV2 = () => {
         </nav>
         </div>
 
-        <div className='md:block hidden w-48 fixed top-0 left-0 h-screen bg-white flex flex col space-y-4'> {/*MENU DE GAUCHE POUR DESKTOP*/}
+        <div className='md:block hidden w-1/5 fixed top-0 left-0 h-screen bg-white flex flex col space-y-4'> {/*MENU DE GAUCHE POUR DESKTOP*/}
             <section>
                 <img src="../public/Henry.png" width={105} height={105} alt="Photo de Henry Georges" className=" m-auto mt-6 mb-4 rounded-full" />
                 <p className='text-xl text-center'>Henry Georges</p>
@@ -50,13 +51,10 @@ const DashboardV2 = () => {
                 <a className='text-violet-300' href="#">Logout</a>
                 </div>
             </section>
-            
-        
-
         </div>
 
 
-        <section className=' bg-white-lilac-50 ml-48'> {/* header desktop version */}
+        <section className=' bg-white-lilac-50 ml-72'> {/* header desktop version */}
             <div className='flex justify-between'>
                 <div>
                     <h1 className='ml-5 mt-5 text-3xl font-bold md:block hidden'>Dashboard</h1> {/*ajouter le nom de la page*/}
@@ -68,7 +66,7 @@ const DashboardV2 = () => {
             
             <div className=' p-14 rounded-xl md:block hidden  bg-blue-bell-400 text-white'>
                 <h1 className='text-3xl ml:hidden'>Welcome back Henry !</h1>
-                <p className='text-base ml:hidden'>You can here add an invoice, a company and some contacts</p>
+                <p className='text-base  text-left ml:hidden'>You can here add an invoice, a company and some contacts</p>
             </div>
         </section>
 
@@ -81,8 +79,6 @@ const DashboardV2 = () => {
 
     <main>
     <div className='grid md:grid-cols-2 gap-4'> {/*MOBILE VERSION*/}
-
-
         <section className='p-5 bg-white m-auto rounded-lg box-border md:hidden'>
             <StatisticsMauves />
         </section>
@@ -100,30 +96,29 @@ const DashboardV2 = () => {
         </section>
     </div>
 
-    <div> {/*DESKTOP VERSION*/}
-    <div className="mt-auto flex justify-between items-center hidden md:flex md:flex-wrap md:justify-center md:items-center fixed md:left-48 top-450 bg-white-lilac-50 gap-6"> 
-
-
-            <section className='p-5 w-507 h-403 bg-white m-auto rounded-lg box-border'>
+    <div className='hidden md:block'> {/*DESKTOP VERSION*/}
+        <div className="bg-white-lilac-50 ml-72 flex flex-wrap gap-6"> 
+            <section className='p-5  bg-white m-auto rounded-lg box-border'>
                 <StatisticsMauves />
             </section>
 
-            <section className='bg-white p-5 m-auto rounded-lg box-border w-507 h-403'>
-               <InvoicesTableMauve />
+            <section className='bg-white p-5 m-auto rounded-lg box-border'>
+                <InvoicesTableMauve />
             </section>
 
-            <section className='bg-white p-5 m-auto rounded-lg box-border w-507 h-403'>
-               <ContactsTableMauve />
+            <section className='bg-white p-5 m-auto rounded-lg box-border'>
+                <ContactsTableMauve />
             </section>        
 
-            <section className='bg-white p-5 m-auto rounded-lg box-border w-507 h-403'>
+            <section className='bg-white p-5 m-auto rounded-lg box-border'>
                 <CompanieTableMauve />
             </section>
-            </div>
-            </div>
+        </div>
+    </div>
                     
     </main>
     </body>
+    
     </>
   );
 };

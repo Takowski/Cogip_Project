@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header_Cogip from './Header'
 import Footer from '../footer'
 import CompanieTable from './assets/json/yellowpage/Companiesyellow'
@@ -37,11 +37,14 @@ function App() {
   }, []);
 
   return (
+    <>
+   
     <Router>
-    <Header_Cogip />
+  
     <Routes>
       <Route path="/" element={
         <>
+        <Header_Cogip />
         <Manage />
         <FormeBizarre />
        <div className="companies5" >
@@ -75,30 +78,54 @@ function App() {
        </card>
      </div>
      <WorkBetter />
-     
+     <Footer />
      </>
       } />
-      <Route path="/AllCompanies" element={
-      <CompanieTable 
-      fetchFive={false} 
-      pagination={true} 
-      showSubHeaderComponent={false} 
-      expandedRows={isExpanded} />
-      } />
-      <Route path="/AllContacts" element={
-      <ContactsTable 
-      fetchFive={false} 
-      pagination={true} 
-      showSubHeaderComponent={false} 
-      expandedRows={isExpanded} />
-      } />
-      <Route path="/AllInvoices" element={
-      <InvoicesTable
-      fetchFive={false}
-      pagination={true}
-      showSubHeaderComponent={false}
-      expandedRows={isExpanded} />
-      } />
+    <Route path="/AllCompanies"   
+      element={
+        <>
+          <Header_Cogip />
+          <FormeBizarre />
+          <CompanieTable 
+            fetchFive={false} 
+            pagination={true} 
+            showSubHeaderComponent={false} 
+            expandedRows={isExpanded} 
+          />
+          <Footer />
+        </>
+      } 
+    />
+    <Route path="/AllContacts"   
+      element={
+        <>
+          <Header_Cogip />
+          <FormeBizarre />
+          <ContactsTable 
+            fetchFive={false} 
+            pagination={true} 
+            showSubHeaderComponent={false} 
+            expandedRows={isExpanded} 
+          />
+          <Footer />
+        </>
+      } 
+    />
+          <Route path="/AllInvoices"   
+      element={
+        <>
+          <Header_Cogip />
+          <FormeBizarre />
+          <InvoicesTable 
+            fetchFive={false} 
+            pagination={true} 
+            showSubHeaderComponent={false} 
+            expandedRows={isExpanded} 
+          />
+          <Footer />
+        </>
+      } 
+    />
       <Route path="/FormCompanies" element={
       <FormCompanies />
       } />
@@ -108,16 +135,26 @@ function App() {
       <Route path="/FormInvoices" element={
       <FormInvoices />
       } />
-      <Route path='/company/:id' element={<CompanyPage />} />
+
+    <Route path='/company/:id' element={
+      <>
+        <Header_Cogip />
+        <FormeBizarre />
+        <CompanyPage />
+        <Footer />
+      </>
+    } />
       
       <Route path="/dashboard" element={<DashboardV2 />} />
     </Routes>
-    <Footer />
+
+  
   </Router>
+  </>
 );
 }
 
-export default App
+export default App;
 
 
     //  <Router>
