@@ -82,9 +82,33 @@ function ContactsTable({ fetchFive, pagination, showSubHeaderComponent, expanded
         <FilterComponent onFilter={e => setFilterText(e.target.value)} onClear={handleClear} filterText={filterText} />
       ) : null;
     }, [filterText, resetPaginationToggle, showSubHeaderComponent]);
+
+  
+    const customStyles = {
+      title: {
+        style: {
+          textAlign: 'center'
+        }
+      },
+      tableWrapper: {
+        style: {
+          display: 'flex',
+          justifyContent: 'center'
+        }
+      },
+      pagination: {
+        style: {
+          justifyContent: 'center'
+        }
+      }
+      
+    };
+    
   
   return (
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
     <DataTable
+      customStyles={customStyles}
       title="Contacts"
       striped={true}
       columns={columns}
@@ -96,6 +120,7 @@ function ContactsTable({ fetchFive, pagination, showSubHeaderComponent, expanded
       subHeader
       subHeaderComponent={subHeaderComponentMemo}
     />
+  </div>
   );
 }
 

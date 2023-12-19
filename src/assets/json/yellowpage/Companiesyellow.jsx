@@ -85,20 +85,42 @@ function CompanieTable({ fetchFive, pagination, showSubHeaderComponent, expanded
     ) : null;
   }, [filterText, resetPaginationToggle, showSubHeaderComponent]);
 
-  return (
-    <DataTable
-      title="Companies"
-      striped={true}
-      columns={columns}
-      data={filteredItems}
-      expandableRows={expandedRows}
-      expandableRowsComponent={ExpandedComponent}
-      pagination={pagination}
-      paginationResetDefaultPage={resetPaginationToggle}
-      subHeader
-      subHeaderComponent={subHeaderComponentMemo}
-    />
-  );
+  const customStyles = {
+    title: {
+      style: {
+        textAlign: 'center'
+      }
+    },
+    tableWrapper: {
+      style: {
+        display: 'flex',
+        justifyContent: 'center'
+      }
+    },
+    pagination: {
+      style: {
+        justifyContent: 'center'
+      }
+    }
+  };
+    
+ return (
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <DataTable
+          title="Companies"
+          striped={true}
+          columns={columns}
+          data={filteredItems}
+          expandableRows={expandedRows}
+          expandableRowsComponent={ExpandedComponent}
+          pagination={pagination}
+          paginationResetDefaultPage={resetPaginationToggle}
+          subHeader
+          subHeaderComponent={subHeaderComponentMemo}
+          customStyles={customStyles}
+        />
+      </div>
+    );
 }
 
 export default CompanieTable;

@@ -76,20 +76,43 @@ function InvoicesTable({ fetchFive, pagination, showSubHeaderComponent, expanded
         <FilterComponent onFilter={e => setFilterText(e.target.value)} onClear={handleClear} filterText={filterText} />
       ) : null;
     }, [filterText, resetPaginationToggle, showSubHeaderComponent]);
+    
+    const customStyles = {
+      title: {
+        style: {
+          textAlign: 'center'
+        }
+      },
+      tableWrapper: {
+        style: {
+          display: 'flex',
+          justifyContent: 'center'
+        }
+      },
+      pagination: {
+        style: {
+          justifyContent: 'center'
+        }
+      }
+    };
   
   return (
-    <DataTable
-      title="Invoices"
-      striped={true}
-      columns={columns}
-      data={filteredItems}
-      expandableRows={expandedRows}
-      expandableRowsComponent={ExpandedComponent}
-      pagination={pagination}
-      paginationResetDefaultPage={resetPaginationToggle}
-      subHeader
-      subHeaderComponent={subHeaderComponentMemo}
-    />
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+  <DataTable
+    title="Invoices"
+    striped={true}
+    columns={columns}
+    data={filteredItems}
+    expandableRows={expandedRows}
+    expandableRowsComponent={ExpandedComponent}
+    pagination={pagination}
+    paginationResetDefaultPage={resetPaginationToggle}
+    subHeader
+    subHeaderComponent={subHeaderComponentMemo}
+    customStyles={customStyles}
+  />
+</div>
+
   );
 }
 
