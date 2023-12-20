@@ -13,7 +13,7 @@
     "axios": "^1.6.2",
     "datatables.net": "^1.13.8",
     "datatables.net-responsive": "^2.5.0",
-    "flowbite": "^2.2.0",
+    "flowbite": "^2.2.1",
     "react": "^18.2.0",
     "react-data-table-component": "^7.5.4",
     "react-dom": "^18.2.0",

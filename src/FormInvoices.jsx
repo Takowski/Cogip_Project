@@ -82,7 +82,9 @@ function FormInvoices() {
         ))}
       </select>
 
-      <button type="submit">Submit</button>
+      <button type="submit"
+      className="mb-6 shadow-sm bg-blue-500 hover:bg-blue-400 text-white text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light rounded"
+      >Submit</button>
 
     </form>
   );
