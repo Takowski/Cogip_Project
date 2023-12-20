@@ -7,7 +7,7 @@ const FormCompanies = () => {
   const [country, setCountry] = useState("");
   const [type, setType] = useState("");
 
-  const countries = ['Belgium', 'UK', 'France', 'Germany', 'Spain'];
+  const countries = ['Albania', 'Andorra', 'Armenia', 'Austria', 'Azerbaijan', 'Belarus', 'Belgium', 'Bosnia and Herzegovina', 'Bulgaria', 'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Georgia', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Kazakhstan', 'Kosovo', 'Latvia', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Malta', 'Moldova', 'Monaco', 'Montenegro', 'Netherlands', 'North Macedonia', 'Norway', 'Poland', 'Portugal', 'Romania', 'Russia', 'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Turkey', 'Ukraine', 'United Kingdom', 'Vatican City'];
   const types = ['Client', 'Supplier'];
 
   const submitForm = async (formData) => {
@@ -87,7 +87,9 @@ const FormCompanies = () => {
           </option>
         ))}
       </select>
-      <button type="submit">Submit</button>
+      <button type="submit"
+      className="mb-6 shadow-sm bg-violet-400 hover:bg-violet-600 text-white text-sm focus:ring-violet-500 focus:border-violet-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light rounded"
+      >Save</button>
     </form>
   );
 }

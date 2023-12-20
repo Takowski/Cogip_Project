@@ -59,7 +59,7 @@ function FormInvoices() {
         placeholder="Reference"
         value={ref}
         onChange={(e) => setRef(e.target.value)}
-        className=" mb-6 shadow-sm bg-neutral-100 border-gray-300 text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+        className=" mb-6 shadow-sm bg-neutral-100 border-gray-300 text-black text-sm focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500 dark:shadow-sm-light"
       />
 
       <input
@@ -83,8 +83,8 @@ function FormInvoices() {
       </select>
 
       <button type="submit"
-      className="mb-6 shadow-sm bg-blue-500 hover:bg-blue-400 text-white text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light rounded"
-      >Submit</button>
+      className="mb-6 shadow-sm bg-violet-400 hover:bg-violet-600 text-white text-sm focus:ring-violet-500 focus:border-violet-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light rounded"
+      >Save</button>
 
     </form>
   );

@@ -92,7 +92,9 @@ const FormContacts = () => {
     </option>
   ))}
 </select>
-      <button type="submit">Save</button>
+      <button type="submit"
+      className="mb-6 shadow-sm bg-violet-400 hover:bg-violet-600 text-white text-sm focus:ring-violet-500 focus:border-violet-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light rounded"
+      >Save</button>
     </form>
   );
 };
