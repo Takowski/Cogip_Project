@@ -17,6 +17,8 @@ import DashboardV2 from './dashboardV2';
 import StatisticsMauves from './StatisticsMauves';
 import ShowContact from './assets/json/yellowpage/ShowContact';
 import ShowInvoice from './assets/json/yellowpage/ShowInvoice';
+import SideImageRight from './SideImageRight';
+import SideImageLeft from './SideImageLeft';
 
 
 
@@ -59,6 +61,7 @@ function App() {
          />
        </card>
      </div>
+     <SideImageRight />
      <div className="companies5" >
        <card className="card">
          <CompanieTable
@@ -69,6 +72,7 @@ function App() {
          />
        </card>
      </div>
+      <SideImageLeft />
      <div className="companies5" >
        <card className="card">
          <ContactsTable
@@ -168,7 +172,7 @@ function App() {
       <Route path="/dashboard" element={<DashboardV2 />} />
     </Routes>
 
-  
+    
   </Router>
   </>
 );
