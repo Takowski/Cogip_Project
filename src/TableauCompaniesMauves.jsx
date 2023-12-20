@@ -2,6 +2,10 @@ import React, { useState, useEffect, useMemo } from 'react';
 import DataTable from 'react-data-table-component';
 import FilterComponent from './filter.jsx';
 import  './mauves_tables.css';
+import ContextMenu from './ContextMenuMauve.jsx';
+
+
+
 
 const ExpandedComponent = ({ data }) =>
   <div className='container flex flex-col p-3 gap-y-1'>
@@ -9,6 +13,16 @@ const ExpandedComponent = ({ data }) =>
     <span>TVA: {data.tva}</span>
     <span>Country: {data.country}</span>
   </div>;
+
+const handleEdit = (row) => {
+  console.log('Edit:', row);
+  // Implement your edit functionality here
+};
+
+const handleDelete = (row) => {
+  console.log('Delete:', row);
+  // Implement your delete functionality here
+};
 
 const columns = [
   {
@@ -27,6 +41,13 @@ const columns = [
     name: 'Country',
     selector: row => row.country,
     sortable: true,
+  },
+  {
+    name: '',
+    cell: row => <ContextMenu onEdit={() => handleEdit(row)} onDelete={() => handleDelete(row)} />,
+    allowOverflow: true,
+    button: true,
+    width: '20px',
   },
 ];
 
