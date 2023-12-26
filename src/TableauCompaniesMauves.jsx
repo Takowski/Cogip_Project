@@ -20,8 +20,17 @@ const handleEdit = (row) => {
 };
 
 const handleDelete = (row) => {
-  console.log('Delete:', row);
-  // Implement your delete functionality here
+  const id = row.id; // Assuming the id is stored in the 'id' property
+  console.log('Delete:', id);
+
+  fetch(`https://api-cogip-329f9c72c66d.herokuapp.com/api/del-company/${id}`, {
+    method: 'DELETE',
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 };
 
 const columns = [
