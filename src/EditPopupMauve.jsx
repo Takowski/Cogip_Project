@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Popup from 'reactjs-popup';
 import axios from 'axios'; // Make sure axios is installed
-import { data } from 'autoprefixer';
+
 
 const EditPopup = ({ row, open, setOpen }) => {
     const [formData, setFormData] = useState({ ...row, type: row ? row.type_name : '' });
@@ -18,6 +18,10 @@ const EditPopup = ({ row, open, setOpen }) => {
             [e.target.name]: e.target.value,
         });
     };
+    const handleClose = () => {
+        setOpen(false);
+        setReload(reload=>!reload);
+      };
 
     const handleSubmit = (e) => {
         e.preventDefault();

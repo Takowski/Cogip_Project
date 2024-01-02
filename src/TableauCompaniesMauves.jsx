@@ -146,7 +146,7 @@ const handleEdit = (row) => {
       customStyles={customStyles}
       progressPending={pendging}
     />
-    <EditPopup row={editRow} open={open} setOpen={setOpen} />
+    <EditPopup row={editRow} open={open} setOpen={setOpen} setReload={setReload} />
     </div>
   );
 }
