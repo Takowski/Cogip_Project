@@ -84,7 +84,7 @@ const handleEdit = (row) => {
   useEffect(() => {
     const url = (fetchFive
       ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/companies'
-      : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies') + `?reload=${reload}`;
+      : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies') + `?t=${reload}`;
     
     fetch(url)
       .then(response => response.json())
