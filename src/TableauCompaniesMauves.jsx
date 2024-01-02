@@ -3,6 +3,7 @@ import DataTable from 'react-data-table-component';
 import FilterComponent from './filter.jsx';
 import  './mauves_tables.css';
 import ContextMenu from './ContextMenuMauve.jsx';
+import EditPopup from './EditPopupMauve.jsx';
 
 
 
@@ -16,10 +17,6 @@ const ExpandedComponent = ({ data }) =>
 
   
 
-const handleEdit = (row) => {
-  console.log('Edit:', row);
-  
-};
 
 
 
@@ -29,13 +26,20 @@ function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
   const [companies, setCompanies] = useState([]);
-
+  const [pendging, setPendging] = useState(true);
   const [reload, setReload] = useState(false);
+  const [open, setOpen] = useState(false); // Add this line
+const [editRow, setEditRow] = useState(null); // Add this line
+  
+const handleEdit = (row) => {
+  setEditRow(row); // Add this line
+  setOpen(true); // Add this line
+};
 
   const handleDelete = (row) => {
     const id = row.id; 
     console.log('Delete:', id);
-  
+  setPendging(true);
     fetch(`https://api-cogip-329f9c72c66d.herokuapp.com/api/del-company/${id}`, {
       method: 'DELETE',
     })
@@ -43,6 +47,7 @@ function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
     .then(data => {
       console.log(data);
       setReload(!reload);
+      setPendging(false);
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -80,9 +85,13 @@ function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
     const url = (fetchFive
       ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/companies'
       : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies') + `?reload=${reload}`;
+    
     fetch(url)
       .then(response => response.json())
-      .then(data => setCompanies(data.data));
+      .then(data => { 
+        setCompanies(data.data);
+        setPendging(false);
+      });
   }, [fetchFive, reload]);
 
   const indexedCompanies = companies.map((company, index) => ({
@@ -122,6 +131,7 @@ function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
     },
   };
   return (
+    <div>
     <DataTable
       title="Last Companies"
       striped={true}
@@ -134,7 +144,10 @@ function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, exp
       subHeader
       subHeaderComponent={subHeaderComponentMemo}
       customStyles={customStyles}
+      progressPending={pendging}
     />
+    <EditPopup row={editRow} open={open} setOpen={setOpen} />
+    </div>
   );
 }
 
