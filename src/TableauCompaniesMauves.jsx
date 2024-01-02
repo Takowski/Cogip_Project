@@ -14,68 +14,76 @@ const ExpandedComponent = ({ data }) =>
     <span>Country: {data.country}</span>
   </div>;
 
+  
+
 const handleEdit = (row) => {
   console.log('Edit:', row);
-  // Implement your edit functionality here
+  
 };
 
-const handleDelete = (row) => {
-  const id = row.id; // Assuming the id is stored in the 'id' property
-  console.log('Delete:', id);
 
-  fetch(`https://api-cogip-329f9c72c66d.herokuapp.com/api/del-company/${id}`, {
-    method: 'DELETE',
-  })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-};
 
-const columns = [
-  {
-    name: 'Name',
-    selector: row => row.company_name,
-    sortable: true,
-    grow: 2,
-  },
-  {
-    name: 'TVA',
-    selector: row => row.tva,
-    sortable: true,
-    hide: 'sm',
-  },
-  {
-    name: 'Country',
-    selector: row => row.country,
-    sortable: true,
-  },
-  {
-    name: '',
-    cell: row => <ContextMenu onEdit={() => handleEdit(row)} onDelete={() => handleDelete(row)} />,
-    allowOverflow: true,
-    button: true,
-    width: '20px',
-  },
-];
+
 
 function CompanieTableMauve({ fetchFive, pagination, showSubHeaderComponent, expandedRows }) {
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
   const [companies, setCompanies] = useState([]);
 
+  const [reload, setReload] = useState(false);
+
+  const handleDelete = (row) => {
+    const id = row.id; 
+    console.log('Delete:', id);
+  
+    fetch(`https://api-cogip-329f9c72c66d.herokuapp.com/api/del-company/${id}`, {
+      method: 'DELETE',
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      setReload(!reload);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  };
+
+  const columns = [
+    {
+      name: 'Name',
+      selector: row => row.company_name,
+      sortable: true,
+      grow: 2,
+    },
+    {
+      name: 'TVA',
+      selector: row => row.tva,
+      sortable: true,
+      hide: 'sm',
+    },
+    {
+      name: 'Country',
+      selector: row => row.country,
+      sortable: true,
+    },
+    {
+      name: '',
+      cell: row => <ContextMenu onEdit={() => handleEdit(row)} onDelete={() => handleDelete(row)} />,
+      allowOverflow: true,
+      button: true,
+      width: '20px',
+    },
+  ];
+
   useEffect(() => {
-
-    const url = fetchFive
+    const url = (fetchFive
       ? 'https://api-cogip-329f9c72c66d.herokuapp.com/api/companies'
-      : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies';
-
-
+      : 'https://api-cogip-329f9c72c66d.herokuapp.com/api/fivecompanies') + `?reload=${reload}`;
     fetch(url)
       .then(response => response.json())
       .then(data => setCompanies(data.data));
-  }, [fetchFive]);
+  }, [fetchFive, reload]);
 
   const indexedCompanies = companies.map((company, index) => ({
     ...company,
